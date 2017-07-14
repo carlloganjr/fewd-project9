@@ -1,0 +1,23 @@
+.search-div {
+  width: 75%;
+  padding: .25rem;
+  float: right;
+  text-align: right;
+  background: $search-field;
+}
+
+#search {
+  width: 35%;
+  padding: .5rem;
+  margin: .5rem 1rem;
+  border: 1px solid $search-accent;
+  border-radius: .25rem;
+}
+
+#search::placeholder {
+  color: $search-accent;
+}
+
+.search-div p {
+  display: none;
+}

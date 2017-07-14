@@ -1,0 +1,19 @@
+nav {
+  display: inline-block;
+  width: 5rem;
+  /*height: 100%;*/
+  background: $nav-bg;
+}
+
+nav li {
+  list-style: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 1rem 0;
+  margin: 0 auto;
+  opacity: .5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,48 @@
+header {
+  background: $header-bg;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  color: $header-text;
+}
+
+h1 {
+  font-size: 1rem;
+  flex-basis: 80%;
+  align-self: center;
+  font-weight: normal;
+}
+
+h1,
+.flex-header {
+  align-self: center;
+}
+
+#icon-bell {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-right: 1rem;
+  overflow: visible;
+
+}
+
+.bell-path {
+  fill: $icon-fill;
+  transition: all .4s ease-in-out;
+}
+
+#icon-bell:hover .bell-path,
+#icon-bell:focus .bell-path {
+  fill: $icon-hover;
+  transform: rotate(20deg);
+  transform-origin: top;
+}
+
+.flex-header {
+  justify-content: flex-end;
+}
+
+.userName {
+  border-left: 1px solid $user-border;
+  padding: .5rem 0 .5rem 1rem;
+}
