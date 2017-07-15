@@ -1,0 +1,12 @@
+@media #{$break-m} {
+  %canvasWidth {
+    min-width: $flexCalc2;
+    max-width: $flexCalc2;
+  }
+}
+
+%floatNflex {
+  float: right;
+  display: flex;
+  width: $flex320;
+}

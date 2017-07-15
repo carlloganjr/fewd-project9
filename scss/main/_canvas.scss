@@ -1,31 +1,31 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 main {
-  float: right;
-  display: flex;
-  width: calc(100% - 5rem);
-  flex: 1;
-  flex-wrap: wrap;
-  @media #{$break-m} {
-    
+  @extend %floatNflex;
+  @include flex(1, 1, null, nowrap, column);
+  @include media('med') {
+    @include flex(1, null, null, wrap);
   }
 }
 
 #mainTraffic {
-  background: red;
   border-bottom: 1px solid $canvas-border;
-  flex-grow: 2;
-  flex-basis: calc(100vw - 5rem);
-}
-
-#traffic,
-#mobileUsers {
-  flex-basis: calc((100vw - 5rem) / 2);
-  min-width: calc((100vw - 5rem) / 2);
+  @include media('med') {
+    @include flex(null, 2, $flexCalc);
+  }
 }
 
 #traffic {
-  background: blue;
+  @include media('med') {
+    @include flex(null, null, $flexCalc);
+    @extend %canvasWidth;
+  }
 }
 
 #mobileUsers {
-  background: green;
+  @include media('med') {
+    @extend %canvasWidth;
+  }
 }

@@ -2,8 +2,11 @@ header {
   background: $header-bg;
   display: flex;
   justify-content: space-between;
-  padding: .5rem 1rem;
   color: $header-text;
+  padding: 0 .5rem;
+  @include media('med') {
+    padding: .5rem 1rem;
+  }
 }
 
 h1 {
@@ -19,9 +22,11 @@ h1,
 }
 
 #icon-bell {
-  width: 1.5rem;
-  height: 1.5rem;
-  padding-right: 1rem;
+  @include sizeBox(
+  1.5rem,
+  0 1.5rem,
+  null,
+  1.5rem);
   overflow: visible;
 
 }
@@ -34,8 +39,8 @@ h1,
 #icon-bell:hover .bell-path,
 #icon-bell:focus .bell-path {
   fill: $icon-hover;
-  transform: rotate(20deg);
-  transform-origin: top;
+  // transform: rotate(20deg);
+  // transform-origin: top;
 }
 
 .flex-header {
@@ -43,6 +48,7 @@ h1,
 }
 
 .userName {
+  white-space: nowrap;
   border-left: 1px solid $user-border;
   padding: .5rem 0 .5rem 1rem;
 }

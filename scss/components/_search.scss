@@ -1,17 +1,20 @@
 .search-div {
-  width: 75%;
-  padding: .25rem;
+  @include sizeBox(50%, .1rem);
   float: right;
   text-align: right;
   background: $search-field;
+  @include media('med') {
+    @include sizeBox(75%, .25rem);
+  }
 }
 
 #search {
-  width: 35%;
-  padding: .5rem;
-  margin: .5rem 1rem;
+  @include sizeBox(75%, .5rem, .25rem .5rem);
   border: 1px solid $search-accent;
   border-radius: .25rem;
+  @include media('med') {
+    @include sizeBox(35%, null, .5rem 1rem);
+  }
 }
 
 #search::placeholder {
