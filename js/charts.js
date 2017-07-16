@@ -2,8 +2,8 @@ let contextMain = document.getElementById('mainTraffic');
 let mainTraffic = new Chart(contextMain, {
   type: 'line',
   data: {
-    labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26',
-             '27-3', '4-10', '11-17', '18-24', '25-31'],
+    labels: ['8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm',
+             '2 pm', '3 pm', '4 pm', '5 pm', '6 pm'],
     datasets: [{
       label: 'TRAFFIC',
       data: [750, 1250, 1000, 1500, 2000, 1500,
@@ -32,7 +32,7 @@ let mainTraffic = new Chart(contextMain, {
           // display: false,
           gridLines: {
             // offsetGridLines: true,
-            drawOnChartArea: true,
+            // drawOnChartArea: true,
             drawTicks: false,
           },
           ticks: {
@@ -44,7 +44,7 @@ let mainTraffic = new Chart(contextMain, {
         }]
       },
       title: {
-        display: true,
+        display: false,
         text: 'TRAFFIC',
         position: 'top'
       },

@@ -1,0 +1,13 @@
+.new-members {
+  list-style: none;
+  @extend %display-flex;
+  @include flex(1, null, null, nowrap, column);
+  li {
+    @include sizeBox(80%, 5%, auto);
+    border-bottom: $border-solid;
+    // @include b-styles($social-bg);
+  }
+  a {
+    text-decoration: none;
+  }
+}

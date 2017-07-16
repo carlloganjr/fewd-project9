@@ -3,7 +3,6 @@
 }
 
 main {
-  @extend %floatNflex;
   @include flex(1, 1, null, nowrap, column);
   @include media('med') {
     @include flex(1, null, null, wrap);
@@ -19,13 +18,13 @@ main {
 
 #traffic {
   @include media('med') {
-    @include flex(null, null, $flexCalc);
-    @extend %canvasWidth;
+    // @include flex(null, null, $flexCalc);
+    // @extend %canvasWidth;
   }
 }
 
 #mobileUsers {
   @include media('med') {
-    @extend %canvasWidth;
+    // @extend %canvasWidth;
   }
 }

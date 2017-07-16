@@ -1,24 +1,24 @@
 nav {
-  display: inline-block;
+  display: none;
   background: $nav-bg;
   width: 3rem;
-  height: calc(100vh - 4rem);
+  // height: calc(100% - 4rem);
   @include media('med') {
     width: 5rem;
+    display: inline-block;
     // height: calc(100vh - 5rem);
   }
   /*height: 100%;*/
-}
-
-nav li {
-  @include sizeBox(1.5rem, 1rem 0, 0 auto, 1.5rem);
-  list-style: none;
-  opacity: .5;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @include media('med') {
-    @include sizeBox(2rem, 1rem 0, null, 2rem);
+  li {
+    @include sizeBox(1.5rem, 1rem 0, 0 auto, 1.5rem);
+    list-style: none;
+    opacity: .5;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include media('med') {
+      @include sizeBox(2rem, 1rem 0, null, 2rem);
+    }
   }
 }

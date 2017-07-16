@@ -1,25 +1,23 @@
-.social-stats {
-  @extend %floatNflex;
-  flex-direction: column;
-  display: block;
-}
-
-.social-icon {
-  list-style: none;
-  @include sizeBox(4rem, 0, 1rem, 4rem);
-  @include b-styles($social-widget, null, 50%);
-}
-
-.social-icon svg {
-  fill: $social-icon;
-  @include sizeBox(1.5rem, null, null, 1.5rem);
-  transform: translate(1.25rem, 1.25rem);
-}
-
-.social-widget {
-  @include sizeBox(80%, 0, 10%, 6rem);
-  @include b-styles(
-  $social-bg,
-  2px solid $social-border,
-  .5rem);
+.social {
+  &-container {
+    list-style: none;
+    display: flex;
+    border-top: $border-solid;
+    border-bottom: $border-solid;
+    @include sizeBox(null, 1rem 0);
+    @include flex(1, null, null, nowrap, column);
+  }
+  &-widget {
+    @include sizeBox(90%, null, 2.5% 5%);
+    @include b-styles(
+    $social-bg,
+    2px solid $social-border,
+    .5rem);
+    svg {
+      @include sizeBox(2rem, 1rem, 1rem, 2rem);
+      @include b-styles($social-widget, null, 50%);
+      fill: $social-icon;
+      overflow: visible;
+    }
+  }
 }

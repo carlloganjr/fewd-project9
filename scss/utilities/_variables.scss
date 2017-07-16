@@ -13,6 +13,7 @@ $social-widget: #400080;
 $social-border: #d9d9d9;
 $social-icon: #fff;
 $social-bg: #f0f1f1;
+$border: $canvas-border;
 
 
 // ======= MEDIA BREAKS =========
@@ -28,3 +29,7 @@ $flexCalc2: calc((100% - 5rem) / 2);
 $flex320: calc(100% - 3rem);
 $position1: absolute;
 $position2: relative;
+
+//========= DECORATION ===========
+
+$border-solid: 1px solid $border;

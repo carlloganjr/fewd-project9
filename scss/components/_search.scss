@@ -6,6 +6,9 @@
   @include media('med') {
     @include sizeBox(75%, .25rem);
   }
+  p {
+    display: none;
+  }
 }
 
 #search {
@@ -15,12 +18,7 @@
   @include media('med') {
     @include sizeBox(35%, null, .5rem 1rem);
   }
-}
-
-#search::placeholder {
-  color: $search-accent;
-}
-
-.search-div p {
-  display: none;
+  &::placeholder {
+    color: $search-accent;
+  }
 }
