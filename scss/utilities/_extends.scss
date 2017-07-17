@@ -14,3 +14,34 @@
 %display-flex {
   display: flex;
 }
+
+%float-l {
+  float: left;
+}
+
+%floatNposition {
+  float: right;
+  // position: relative;
+  // top: 1.25rem;
+  // right: 18%;
+}
+
+%button {
+  @include sizeBox(78%, 1%, 1.5rem 10%, 2.5rem);
+  color: $button-text;
+  @include b-styles($button-bg, none, .5rem);
+  &:focus,
+  &:hover {
+    color: $input-text;
+    @include b-styles($input-focus);
+  }
+}
+
+%inputs {
+  @include sizeBox(78%, 1%, .75rem 10%);
+  @include b-styles($input-bg, none, .5rem);
+  transition: all .5s;
+  &:focus {
+    @include b-styles($input-focus);
+  }
+}

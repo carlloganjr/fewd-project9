@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/dashboard.css">
@@ -29,23 +31,27 @@
       </svg>
       <span class="userName flex-header">User Name</span>
     </header>
+
     <div class="search-div">
-      <input type="text" name="search" id="search" aria-describedby="search-tip"
+      <input type="search" name="search" id="search" aria-describedby="search-tip"
       placeholder="Search">
-      <p id="search-tip">Search for Users</p>
+      <p id="search-tip">Enter your search</p>
     </div>
+
     <main>
       <canvas id="mainTraffic"></canvas>
       <canvas id="traffic"></canvas>
       <canvas id="mobileUsers"></canvas>
     </main>
+
     <nav>
       <li><img src="icons/icon-dashboard.svg" alt="dashboard icon"></li>
       <li><img src="icons/icon-members.svg" alt="members icon"></li>
       <li><img src="icons/icon-visits.svg" alt="visits icon"></li>
       <li><img src="icons/icon-settings.svg" alt="settings icon"></li>
     </nav>
-    <section>
+
+    <section> <!-- begin social widget  -->
       <ul class="social-container">
         <li class="social-widget">
           <svg version="1.1" id="twitter" xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +68,8 @@
             0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
           	c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
           </svg>
+          <h2 class="twitter-heading">TWITTER</h2>
+          <p>25,333</p>
         </li>
         <li class="social-widget">
           <svg enable-background="new 0 0 56.693 56.693" height="56.693px"
@@ -72,6 +80,8 @@
             5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,
             10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,
             0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg>
+            <h2 class="facebook-heading">FACEBOOK</h2>
+            <p>13,115</p>
         </li>
         <li class="social-widget">
           <svg version="1.1" id="google" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -93,17 +103,62 @@
           	c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
           	h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
           </svg>
+          <h2 class="google-heading">GOOGLE</h2>
+          <p>15,875</p>
         </li>
       </ul>
-    </section>
-    <section id="newMembers">
-      <h2 class="memberTile">NEW MEMBERS</h2>
+    </section> <!-- end social widget  -->
+
+    <section id="newMembers"> <!-- begin members widget  -->
 
     </section>
     <section id="recentActive">
-    <h2 class="memberTile">NEW MEMBERS</h2>
-    
-    </section>
+
+    </section> <!-- end members widget  -->
+
+  <form>
+    <h2 class="sectionTitle">MESSAGE USER</h2>
+    <input type="search" name="user_search" id="userSearch"
+    placeholder="Search for User">
+    <textarea id="userMessage" name="user_message" placeholder="Message for User">
+    </textarea>
+    <button type="submit" name="send">SEND</button>
+  </form>
+
+  <div class="settings"> <!-- begin setting div -->
+    <h2 class="sectionTitle">SETTINGS</h2>
+    <span class="settingSpan">Send Email Notifications</span>
+    <label class="switch-light switch-ios" onclick="">
+      <input type="checkbox">
+        <span>
+          <span>Off</span>
+          <span>On</span>
+          <a></a>
+        </span>
+    </label> <!-- end email toggle -->
+    <span class="settingSpan">Set Profile to Public</span>
+    <label class="switch-light switch-ios" onclick="">
+      <input type="checkbox">
+        <span>
+          <span>Off</span>
+          <span>On</span>
+          <a></a>
+        </span>
+    </label> <!-- end profile toggle -->
+    <select id="timeZone" name="time_zone">
+      <option value="-10.0">(GMT -10:00) Hawaii</option>
+     <option value="-9.0">(GMT -9:00) Alaska</option>
+     <option value="-8.0">(GMT -8:00) Pacific Time</option>
+     <option value="-7.0">(GMT -7:00) Mountain Time</option>
+     <option value="-6.0">(GMT -6:00) Central Time</option>
+     <option value="-5.0">(GMT -5:00) Eastern Time</option>
+     <option value="-4.0">(GMT -4:00) Atlantic Time</option>
+    </select>
+    <button type="button" name="save">SAVE</button>
+    <button type="button" name="cancel">CANCEL</button>
+  </div> <!-- end setting div -->
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>

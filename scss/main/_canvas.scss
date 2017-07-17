@@ -1,6 +1,3 @@
-* {
-  font-family: 'Open Sans', sans-serif;
-}
 
 main {
   @include flex(1, 1, null, nowrap, column);

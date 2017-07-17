@@ -1,0 +1,20 @@
+form {
+  // border-top: $border-solid;
+  border-bottom: $border-solid;
+}
+
+#userSearch {
+  @extend %inputs;
+}
+
+#userMessage {
+  @include sizeBox(78%, 1%, .75rem 10%, 5rem);
+  @include b-styles($input-bg, none, .5rem);
+  &:focus {
+    @include b-styles($input-focus);
+  }
+}
+
+button[name="send"] {
+  @extend %button;
+}
