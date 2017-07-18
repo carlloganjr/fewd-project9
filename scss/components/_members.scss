@@ -1,15 +1,15 @@
 %members {
   list-style: none;
-  @extend %display-flex;
-  @include flex(1, null, null, nowrap, column);
+  display: block;
+  // @extend %display-flex;
+  // @include flex(1, null, null, nowrap, column);
   li {
-    @include sizeBox(80%, 2.5%, auto);
+    @include sizeBox(85%, 2.5%, auto, 4rem);
     border-bottom: $border-solid;
-    // @include b-styles($social-bg);
   }
   a {
     text-decoration: none;
-    float: left;
+    font-size: .7rem;
     @include sizeBox(null, 0, 0);
   }
   img {
@@ -21,18 +21,45 @@
 
 .new-members {
   @extend %members;
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.member-list span {
-  @include sizeBox(null, 0, 0);
 }
 
 .new-activity {
   @extend %members;
-  &:last-child {
-    border-bottom: none;
+}
+
+time {
+  // @extend %float-r;
+  font-size: .75rem;
+}
+
+.user-name {
+  white-space: nowrap;
+  font-size: 1rem;
+  @include sizeBox(null, 0, .25rem 0 0 0);
+}
+
+.activity {
+  margin-top: .5rem;
+  margin-bottom: 0;
+  white-space: pre-wrap;
+}
+
+.active-time {
+  font-size: .75rem;
+  margin-top: .25rem;
+}
+
+.arrow {
+  @extend %float-r;
+  padding: 0 .25rem;
+  position: relative;
+  top: -2.75rem;
+  background: $button-bg;
+  color: $button-text;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  &:hover {
+    background: $input-focus;
+    color: $input-text;
   }
 }

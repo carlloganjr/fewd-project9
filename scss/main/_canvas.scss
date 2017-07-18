@@ -6,22 +6,23 @@ main {
   }
 }
 
-#mainTraffic {
+.mainTraffic {
   border-bottom: 1px solid $canvas-border;
   @include media('med') {
     @include flex(null, 2, $flexCalc);
   }
 }
 
-#traffic {
+.traffic {
+  border-bottom: 1px solid $canvas-border;
   @include media('med') {
-    // @include flex(null, null, $flexCalc);
-    // @extend %canvasWidth;
+    @include flex(null, null, $flexCalc);
+    @extend %canvasWidth;
   }
 }
 
-#mobileUsers {
+.mobileUsers {
   @include media('med') {
-    // @extend %canvasWidth;
+    @extend %canvasWidth;
   }
 }

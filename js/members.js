@@ -21,17 +21,19 @@ $('document').ready(function() {
         //create list for new members
         memberLIST += '<li class="member-list">';
         memberLIST += '<img src="' + photo + '" alt="user photo" class="userPhoto">';
-        memberLIST += '<span class="user-name">' + firstName + ' ' + lastName + '</span>';
+        // memberLIST += '<div class="memb-div">';
+        memberLIST += '<p class="user-name">' + firstName + ' ' + lastName + '</p>';
+        memberLIST += '<a href="mailto:' + email + '">' + email + '</a><br>';
+        // memberLIST += '</div>';
         memberLIST += '<time>7/16/17</time>';
-        memberLIST += '<a href="mailto:' + email + '">' + email + '</a>';
         memberLIST += '</li>';
 
         //create list for recent activity
         activityLIST += '<li class="member-list">';
         activityLIST += '<img src="' + photo + '" alt="user photo" class="userPhoto">';
-        activityLIST += '<span class="activity">' + firstName + ' ' + lastName +
-        ' liked YourApp\'s post</span>';
-        activityLIST += '<span>37 minutes ago</span>';
+        activityLIST += '<p class="activity">' + firstName + ' ' + lastName +
+        ' liked YourApp\'s post</p>';
+        activityLIST += '<p class="active-time">37 minutes ago</p>';
         activityLIST += '<span class="arrow">></span>';
         activityLIST += '</li>';
 

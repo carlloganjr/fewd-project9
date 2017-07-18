@@ -90,7 +90,7 @@ let traffic = new Chart(contextDaily, {
         }]
       },
       title: {
-        display: true,
+        display: false,
         text: 'DAILY TRAFFIC',
         position: 'top'
       },
@@ -122,7 +122,7 @@ let mobileUsers = new Chart(contextUsers, {
         }
       },
       title: {
-        display: true,
+        display: false,
         text: 'MOBILE USER',
         position: 'top'
       },

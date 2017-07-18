@@ -6,3 +6,16 @@ h2 {
   font-size: 1rem;
   margin-left: 1rem;
 }
+
+.dash {
+  @extend %float-l;
+  margin-left: 5.5%;
+  font-size: 1rem;
+  color: $dash;
+}
+
+main h2 {
+  @extend %float-l;
+  clear: both;
+  margin: 1rem auto 0 .5rem;
+}

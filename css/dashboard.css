@@ -1,8 +1,12 @@
-.new-members, .new-activity {
-  display: flex; }
-
-.new-members img, .new-activity img {
+@media (min-width: 768px) {
+  .traffic, .mobileUsers {
+    min-width: calc((100% - 5rem) / 2);
+    max-width: calc((100% - 5rem) / 2); } }
+.new-members img, .new-activity img, .dash, main h2 {
   float: left; }
+
+.alertClose, .arrow {
+  float: right; }
 
 .social-widget p, .google-heading,
 .twitter-heading,
@@ -18,12 +22,13 @@ button[name="cancel"], button[name="send"] {
   color: #fff;
   background: #7733ff;
   border: none;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  transition: all .5s ease-in-out; }
   button[name="save"]:focus,
   button[name="cancel"]:focus, button[name="send"]:focus, button[name="save"]:hover,
   button[name="cancel"]:hover, button[name="send"]:hover {
-    color: #400080;
-    background: #dce1fc; }
+    color: #fff;
+    background: #8080ff; }
 
 select, #userSearch {
   width: 78%;
@@ -32,21 +37,21 @@ select, #userSearch {
   background: #f0f1f1;
   border: none;
   border-radius: 0.5rem;
-  transition: all .5s; }
+  transition: all .5s ease-in-out; }
   select:focus, #userSearch:focus {
-    background: #dce1fc; }
+    background: #8080ff; }
 
 nav {
-  display: none;
+  display: flex;
   background: #7733ff;
-  width: 3rem;
+  width: 100%;
+  height: 3rem;
   /*height: 100%;*/ }
   @media (min-width: 768px) {
     nav {
       width: 5rem;
       display: inline-block; } }
   nav li {
-    width: 1.5rem;
     padding: 1rem 0;
     margin: 0 auto;
     height: 1.5rem;
@@ -54,8 +59,12 @@ nav {
     opacity: .5;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
-    justify-content: center; }
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+    transition: all .3s ease-in-out; }
+    nav li:hover {
+      opacity: 1; }
     @media (min-width: 768px) {
       nav li {
         width: 2rem;
@@ -63,11 +72,14 @@ nav {
         height: 2rem; } }
 
 .search-div {
-  width: 50%;
+  width: 60%;
   padding: 0.1rem;
+  margin: 0 0 1.5rem 0;
   float: right;
   text-align: right;
-  background: #f0f1f1; }
+  background: #f0f1f1;
+  border-left: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9; }
   @media (min-width: 768px) {
     .search-div {
       width: 75%;
@@ -79,14 +91,50 @@ nav {
   width: 75%;
   padding: 0.5rem;
   margin: 0.25rem 0.5rem;
-  border: 1px solid #d9d9d9;
-  border-radius: .25rem; }
+  border: 1px solid #d9d9d9; }
   @media (min-width: 768px) {
     #search {
       width: 35%;
       margin: 0.5rem 1rem; } }
   #search::placeholder {
     color: #d9d9d9; }
+
+@keyframes alertFade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.mainAlert {
+  width: 89%;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  background: #7733ff;
+  border-radius: 0.5rem;
+  clear: both;
+  color: #fff;
+  opacity: 0;
+  animation: 1s ease-in .4s forwards alertFade; }
+  .mainAlert p {
+    font-size: .88rem;
+    width: 95%;
+    padding: 0;
+    margin: auto; }
+
+.alertClose {
+  color: #fff;
+  font-size: .8rem;
+  font-weight: bold;
+  position: relative;
+  top: -.85rem;
+  right: -.2rem;
+  background: #8080ff;
+  border-radius: 50%;
+  padding: 0 .35rem .2rem .35rem;
+  cursor: default;
+  transition: all .3s ease-in-out; }
+  .alertClose:hover {
+    background: #fff;
+    color: #7733ff; }
 
 .social-container {
   list-style: none;
@@ -100,6 +148,8 @@ nav {
 .social-widget {
   width: 90%;
   margin: 2.5% 5%;
+  max-width: 425px;
+  min-width: 287px;
   background: #f0f1f1;
   border: 2px solid #d9d9d9;
   border-radius: 0.5rem; }
@@ -117,7 +167,7 @@ nav {
     clear: right;
     padding: 0;
     margin: 0;
-    transform: translate(-40%, 1rem); }
+    transform: translate(-35%, 1rem); }
 
 .google-heading,
 .twitter-heading,
@@ -127,27 +177,26 @@ nav {
   margin: 0; }
 
 .google-heading {
-  transform: translate(-6.4rem, 1.25rem); }
+  transform: translate(-6rem, 1.25rem); }
 
 .twitter-heading {
-  transform: translate(-6.5rem, 1.25rem); }
+  transform: translate(-6.1rem, 1.25rem); }
 
 .facebook-heading {
-  transform: translate(-5.25rem, 1.25rem); }
+  transform: translate(-5rem, 1.25rem); }
 
 .new-members, .new-activity {
   list-style: none;
-  flex: 1;
-  flex-wrap: nowrap;
-  flex-direction: column; }
+  display: block; }
   .new-members li, .new-activity li {
-    width: 80%;
+    width: 85%;
     padding: 2.5%;
     margin: auto;
+    height: 4rem;
     border-bottom: 1px solid #7733ff; }
   .new-members a, .new-activity a {
     text-decoration: none;
-    float: left;
+    font-size: .7rem;
     padding: 0;
     margin: 0; }
   .new-members img, .new-activity img {
@@ -157,15 +206,35 @@ nav {
     margin: auto 1rem auto 0;
     height: 4rem; }
 
-.new-members:last-child {
-  border-bottom: none; }
+time {
+  font-size: .75rem; }
 
-.member-list span {
+.user-name {
+  white-space: nowrap;
+  font-size: 1rem;
   padding: 0;
-  margin: 0; }
+  margin: 0.25rem 0 0 0; }
 
-.new-activity:last-child {
-  border-bottom: none; }
+.activity {
+  margin-top: .5rem;
+  margin-bottom: 0;
+  white-space: pre-wrap; }
+
+.active-time {
+  font-size: .75rem;
+  margin-top: .25rem; }
+
+.arrow {
+  padding: 0 .25rem;
+  position: relative;
+  top: -2.75rem;
+  background: #7733ff;
+  color: #fff;
+  cursor: pointer;
+  transition: all .5s ease-in-out; }
+  .arrow:hover {
+    background: #8080ff;
+    color: #fff; }
 
 .switch-ios.switch-light input:checked ~ span {
   border-color: #7733ff;
@@ -192,6 +261,15 @@ nav {
 h2 {
   font-size: 1rem;
   margin-left: 1rem; }
+
+.dash {
+  margin-left: 5.5%;
+  font-size: 1rem;
+  color: grey; }
+
+main h2 {
+  clear: both;
+  margin: 1rem auto 0 .5rem; }
 
 header {
   background: #8080ff;
@@ -245,11 +323,17 @@ main {
       flex: 1;
       flex-wrap: wrap; } }
 
-#mainTraffic {
+.mainTraffic {
   border-bottom: 1px solid #7733ff; }
   @media (min-width: 768px) {
-    #mainTraffic {
+    .mainTraffic {
       flex-grow: 2;
+      flex-basis: calc(100% - 5rem); } }
+
+.traffic {
+  border-bottom: 1px solid #7733ff; }
+  @media (min-width: 768px) {
+    .traffic {
       flex-basis: calc(100% - 5rem); } }
 
 form {
@@ -262,8 +346,9 @@ form {
   height: 5rem;
   background: #f0f1f1;
   border: none;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  transition: all .5s ease-in-out; }
   #userMessage:focus {
-    background: #dce1fc; }
+    background: #8080ff; }
 
 /*# sourceMappingURL=dashboard.css.map */

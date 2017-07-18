@@ -1,8 +1,10 @@
 .search-div {
-  @include sizeBox(50%, .1rem);
+  @include sizeBox(60%, .1rem, 0 0 1.5rem 0);
   float: right;
   text-align: right;
   background: $search-field;
+  border-left: 1px solid $search-accent;
+  border-bottom: 1px solid $search-accent;
   @include media('med') {
     @include sizeBox(75%, .25rem);
   }
@@ -14,7 +16,6 @@
 #search {
   @include sizeBox(75%, .5rem, .25rem .5rem);
   border: 1px solid $search-accent;
-  border-radius: .25rem;
   @include media('med') {
     @include sizeBox(35%, null, .5rem 1rem);
   }

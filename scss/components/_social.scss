@@ -9,6 +9,8 @@
   }
   &-widget {
     @include sizeBox(90%, null, 2.5% 5%);
+    max-width: 425px;
+    min-width: 287px;
     @include b-styles(
     $social-bg,
     2px solid $social-border,
@@ -24,7 +26,7 @@
       @extend %floatNposition;
       clear: right;
       @include sizeBox(null, 0, 0);
-      transform: translate(-40%, 1rem);
+      transform: translate(-35%, 1rem);
     }
   }
 }
@@ -38,13 +40,13 @@
 }
 
 .google-heading {
-  transform: translate(-6.4rem, 1.25rem);
+  transform: translate(-6rem, 1.25rem);
 }
 
 .twitter-heading {
-  transform: translate(-6.5rem, 1.25rem);
+  transform: translate(-6.1rem, 1.25rem);
 }
 
 .facebook-heading {
-  transform: translate(-5.25rem, 1.25rem);
+  transform: translate(-5rem, 1.25rem);
 }
