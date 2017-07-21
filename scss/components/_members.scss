@@ -25,6 +25,8 @@
 
 .new-activity {
   @extend %members;
+  position: initial;
+  z-index: -1;
 }
 
 time {

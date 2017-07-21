@@ -43,9 +43,10 @@
 }
 
 %inputs {
-  @include sizeBox(78%, 1%, .75rem 10%);
+  @include sizeBox(80%, .5rem 0, .75rem 10%);
   @include b-styles($input-bg, none, .5rem);
   transition: all .5s ease-in-out;
+  text-indent: .75rem;
   &:focus {
     @include b-styles($input-focus);
   }

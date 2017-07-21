@@ -4,9 +4,11 @@
 }
 
 .switch-light {
-    // position: relative;
-    // display: block;
     @include sizeBox(50%, 0, 1rem 25% 2rem 25%);
+}
+
+.switch-ios.switch-light input:checked ~ span a {
+    border-color: $toggle;
 }
 
 .settings {
@@ -28,4 +30,14 @@ select {
 button[name="save"],
 button[name="cancel"] {
   @extend %button;
+}
+
+
+button[name="cancel"] {
+  background: $cancel;
+}
+
+button[name="cancel"]:hover {
+  background: $cancel;
+  opacity: .7;
 }

@@ -31,13 +31,14 @@ button[name="cancel"], button[name="send"] {
     background: #8080ff; }
 
 select, #userSearch {
-  width: 78%;
-  padding: 1%;
+  width: 80%;
+  padding: 0.5rem 0;
   margin: 0.75rem 10%;
   background: #f0f1f1;
   border: none;
   border-radius: 0.5rem;
-  transition: all .5s ease-in-out; }
+  transition: all .5s ease-in-out;
+  text-indent: .75rem; }
   select:focus, #userSearch:focus {
     background: #8080ff; }
 
@@ -53,7 +54,7 @@ nav {
       display: inline-block; } }
   nav li {
     padding: 1rem 0;
-    margin: 0 auto;
+    margin: 0;
     height: 1.5rem;
     list-style: none;
     opacity: .5;
@@ -65,16 +66,23 @@ nav {
     transition: all .3s ease-in-out; }
     nav li:hover {
       opacity: 1; }
+    nav li img {
+      max-width: 100%; }
     @media (min-width: 768px) {
       nav li {
         width: 2rem;
         padding: 1rem 0;
         height: 2rem; } }
 
+.nav-dash {
+  opacity: 1; }
+  .nav-dash:hover {
+    opacity: .5; }
+
 .search-div {
   width: 60%;
   padding: 0.1rem;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   float: right;
   text-align: right;
   background: #f0f1f1;
@@ -113,7 +121,7 @@ nav {
   clear: both;
   color: #fff;
   opacity: 0;
-  animation: 1s ease-in .4s forwards alertFade; }
+  animation: 1s ease-in .3s forwards alertFade; }
   .mainAlert p {
     font-size: .88rem;
     width: 95%;
@@ -136,6 +144,34 @@ nav {
     background: #fff;
     color: #7733ff; }
 
+#sent {
+  text-align: center;
+  font-size: 1rem;
+  color: #400080;
+  white-space: nowrap;
+  width: 12rem;
+  padding: 0.5rem;
+  margin: auto;
+  height: 3.5rem;
+  background: rgba(119, 51, 255, 0.7);
+  border-radius: 0.5rem;
+  position: fixed;
+  top: 150px;
+  left: 15%;
+  z-index: 100;
+  opacity: 0; }
+
+.show {
+  animation: 1s ease-in .4s forwards alertFade; }
+
+#requireUser {
+  display: none;
+  z-index: 101; }
+
+#requireMessage {
+  display: none;
+  z-index: 102; }
+
 .social-container {
   list-style: none;
   display: flex;
@@ -147,8 +183,8 @@ nav {
   flex-direction: column; }
 .social-widget {
   width: 90%;
-  margin: 2.5% 5%;
-  max-width: 425px;
+  margin: 2.5% auto;
+  max-width: 375px;
   min-width: 287px;
   background: #f0f1f1;
   border: 2px solid #d9d9d9;
@@ -206,6 +242,10 @@ nav {
     margin: auto 1rem auto 0;
     height: 4rem; }
 
+.new-activity {
+  position: initial;
+  z-index: -1; }
+
 time {
   font-size: .75rem; }
 
@@ -245,6 +285,9 @@ time {
   padding: 0;
   margin: 1rem 25% 2rem 25%; }
 
+.switch-ios.switch-light input:checked ~ span a {
+  border-color: #7733ff; }
+
 .settings {
   text-align: center; }
 
@@ -254,6 +297,13 @@ time {
 
 .sectionTitle {
   text-align: left; }
+
+button[name="cancel"] {
+  background: grey; }
+
+button[name="cancel"]:hover {
+  background: grey;
+  opacity: .7; }
 
 * {
   font-family: 'Open Sans', sans-serif; }
@@ -336,17 +386,38 @@ main {
     .traffic {
       flex-basis: calc(100% - 5rem); } }
 
+#chart-buttons {
+  clear: left;
+  display: flex;
+  width: 70%;
+  margin: 0 5% 0 25%;
+  font-size: .8rem;
+  list-style: none;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end; }
+  #chart-buttons li {
+    padding: 0.5rem;
+    margin: 0.1rem;
+    cursor: pointer; }
+
+.chart-button-color {
+  background: lightgreen;
+  border-radius: 1rem; }
+
 form {
   border-bottom: 1px solid #7733ff; }
 
 #userMessage {
-  width: 78%;
-  padding: 1%;
+  width: 80%;
+  padding: 0.5rem 0;
   margin: 0.75rem 10%;
-  height: 5rem;
+  height: 7rem;
   background: #f0f1f1;
   border: none;
   border-radius: 0.5rem;
+  text-indent: -.5rem;
   transition: all .5s ease-in-out; }
   #userMessage:focus {
     background: #8080ff; }

@@ -26,3 +26,22 @@ main {
     @extend %canvasWidth;
   }
 }
+
+#chart-buttons {
+  clear: left;
+  display: flex;
+  @include sizeBox(70%, null, 0 5% 0 25%);
+  font-size: .8rem;
+  list-style: none;
+  @include flex(null, 1, null, nowrap, row) {
+    justify-content: flex-end;
+  }
+  li {
+    @include sizeBox(null, .5rem, .1rem);
+    cursor: pointer;
+  }
+}
+
+.chart-button-color {
+  @include b-styles(lightgreen, null, 1rem);
+}

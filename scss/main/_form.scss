@@ -8,8 +8,9 @@ form {
 }
 
 #userMessage {
-  @include sizeBox(78%, 1%, .75rem 10%, 5rem);
+  @include sizeBox(80%, .5rem 0, .75rem 10%, 7rem);
   @include b-styles($input-bg, none, .5rem);
+  text-indent: -.5rem;
   transition: all .5s ease-in-out;
   &:focus {
     @include b-styles($input-focus);

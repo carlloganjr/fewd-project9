@@ -10,7 +10,7 @@ nav {
   }
   /*height: 100%;*/
   li {
-    @include sizeBox(null, 1rem 0, 0 auto, 1.5rem);
+    @include sizeBox(null, 1rem 0, 0, 1.5rem);
     list-style: none;
     opacity: .5;
     cursor: pointer;
@@ -22,8 +22,19 @@ nav {
     &:hover {
       opacity: 1;
     }
+    img {
+    max-width: 100%;
+    }
     @include media('med') {
       @include sizeBox(2rem, 1rem 0, null, 2rem);
     }
+  }
+}
+
+
+.nav-dash {
+  opacity: 1;
+  &:hover {
+    opacity: .5;
   }
 }

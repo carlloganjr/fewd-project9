@@ -33,7 +33,7 @@
     </header>
 
     <nav>
-      <li><img src="icons/icon-dashboard.svg" alt="dashboard icon"></li>
+      <li class="nav-dash"><img src="icons/icon-dashboard.svg" alt="dashboard icon"></li>
       <li><img src="icons/icon-members.svg" alt="members icon"></li>
       <li><img src="icons/icon-visits.svg" alt="visits icon"></li>
       <li><img src="icons/icon-settings.svg" alt="settings icon"></li>
@@ -47,7 +47,7 @@
       <p id="search-tip">Enter your search</p>
     </div>
 
-    <div class="mainAlert">
+    <div class="mainAlert" id="theAlert">
       <p>You have 17 new ThisApp messages.  These messages will automatically
         expire in 90 days.</p>
         <span class="alertClose">x</span>
@@ -56,6 +56,12 @@
     <main>
       <div class="mainTraffic">
         <h2>TRAFFIC</h2>
+        <ul id="chart-buttons">
+          <li onclick="hourlyChart()">Hourly</li>
+          <li onclick="dailyChart()">Daily</li>
+          <li onclick="weeklyChart()">Weekly</li>
+          <li onclick="monthlyChart()">Montly</li>
+        </ul>
         <canvas id="mainTraffic"></canvas>
       </div>
       <div class="traffic">
@@ -67,13 +73,6 @@
         <canvas id="mobileUsers"></canvas>
       </div>
     </main>
-
-    <!-- <nav>
-      <li><img src="icons/icon-dashboard.svg" alt="dashboard icon"></li>
-      <li><img src="icons/icon-members.svg" alt="members icon"></li>
-      <li><img src="icons/icon-visits.svg" alt="visits icon"></li>
-      <li><img src="icons/icon-settings.svg" alt="settings icon"></li>
-    </nav> -->
 
     <section> <!-- begin social widget  -->
       <ul class="social-container">
@@ -141,47 +140,51 @@
 
     </section> <!-- end members widget  -->
 
-  <form>
-    <h2 class="sectionTitle">MESSAGE USER</h2>
-    <input type="search" name="user_search" id="userSearch"
-    placeholder="Search for User">
-    <textarea id="userMessage" name="user_message" placeholder="Message for User">
-    </textarea>
-    <button type="submit" name="send">SEND</button>
-  </form>
+    <div id="sent"> <!-- message shown on submit-->
+      <p>Message sent!</p>
+    </div>
 
-  <div class="settings"> <!-- begin setting div -->
-    <h2 class="sectionTitle">SETTINGS</h2>
-    <span class="settingSpan">Send Email Notifications</span>
-    <label class="switch-light switch-ios" onclick="">
-      <input type="checkbox">
-        <span>
-          <span>Off</span>
-          <span>On</span>
-          <a></a>
-        </span>
-    </label> <!-- end email toggle -->
-    <span class="settingSpan">Set Profile to Public</span>
-    <label class="switch-light switch-ios" onclick="">
-      <input type="checkbox">
-        <span>
-          <span>Off</span>
-          <span>On</span>
-          <a></a>
-        </span>
-    </label> <!-- end profile toggle -->
-    <select id="timeZone" name="time_zone">
-      <option value="-10.0">(GMT -10:00) Hawaii</option>
-     <option value="-9.0">(GMT -9:00) Alaska</option>
-     <option value="-8.0">(GMT -8:00) Pacific Time</option>
-     <option value="-7.0">(GMT -7:00) Mountain Time</option>
-     <option value="-6.0">(GMT -6:00) Central Time</option>
-     <option value="-5.0">(GMT -5:00) Eastern Time</option>
-     <option value="-4.0">(GMT -4:00) Atlantic Time</option>
-    </select>
-    <button type="button" name="save">SAVE</button>
-    <button type="button" name="cancel">CANCEL</button>
-  </div> <!-- end setting div -->
+    <form>
+      <h2 class="sectionTitle">MESSAGE USER</h2>
+      <input type="search" name="user_search" id="userSearch"
+      placeholder="Search for User">
+      <textarea id="userMessage" name="user_message" placeholder="Message for User">
+      </textarea>
+      <button id="userButton" type="submit" name="send">SEND</button>
+    </form>
+
+    <div class="settings"> <!-- begin setting div -->
+      <h2 class="sectionTitle">SETTINGS</h2>
+      <span class="settingSpan">Send Email Notifications</span>
+      <label class="switch-light switch-ios" onclick="">
+        <input type="checkbox">
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+      </label> <!-- end email toggle -->
+      <span class="settingSpan">Set Profile to Public</span>
+      <label class="switch-light switch-ios" onclick="">
+        <input type="checkbox">
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+      </label> <!-- end profile toggle -->
+      <select id="timeZone" name="time_zone">
+        <option value="-10.0">(GMT -10:00) Hawaii</option>
+       <option value="-9.0">(GMT -9:00) Alaska</option>
+       <option value="-8.0">(GMT -8:00) Pacific Time</option>
+       <option value="-7.0">(GMT -7:00) Mountain Time</option>
+       <option value="-6.0">(GMT -6:00) Central Time</option>
+       <option value="-5.0">(GMT -5:00) Eastern Time</option>
+       <option value="-4.0">(GMT -4:00) Atlantic Time</option>
+      </select>
+      <button type="button" name="save">SAVE</button>
+      <button type="reset" name="cancel">CANCEL</button>
+    </div> <!-- end setting div -->
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -190,6 +193,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/members.js"></script>
-    <script src="js/alerts_inputs.js"></script>
+    <script src="js/dashboard.js"></script>
   </body>
 </html>

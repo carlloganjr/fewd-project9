@@ -1,5 +1,5 @@
 .search-div {
-  @include sizeBox(60%, .1rem, 0 0 1.5rem 0);
+  @include sizeBox(60%, .1rem, 0 0 1rem 0);
   float: right;
   text-align: right;
   background: $search-field;

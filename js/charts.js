@@ -1,4 +1,4 @@
-let contextMain = document.getElementById('mainTraffic');
+const contextMain = document.getElementById('mainTraffic');
 let mainTraffic = new Chart(contextMain, {
   type: 'line',
   data: {
@@ -18,7 +18,7 @@ let mainTraffic = new Chart(contextMain, {
       fill: true,
       backgroundColor: 'rgba(164, 151, 247, 0.1)'
     }]
-  },
+  }, // end data
     options: {
       scales: {
         xAxes: [{
@@ -26,37 +26,36 @@ let mainTraffic = new Chart(contextMain, {
             offsetGridLines: true,
             drawOnChartArea: true,
             drawTicks: false
-          }
-        }],
+          } // end x gridLines
+        }], // end xAxes
         yAxes: [{
           // display: false,
           gridLines: {
             // offsetGridLines: true,
             // drawOnChartArea: true,
             drawTicks: false,
-          },
+          }, // end y gridLines
           ticks: {
             // beginAtZero: true,
             min: 500,
             max: 2500,
             stepSize: 500
-          }
-        }]
-      },
+          } // end ticks
+        }] // end yAxes
+      }, // end scales
       title: {
         display: false,
         text: 'TRAFFIC',
         position: 'top'
-      },
+      }, // end title
       legend: {
         display: false
-      },
+      }, // end legend
       layout: {
             padding: 15
-        }
-    }
-
-});
+        } // end layout
+    } // end options
+}); // end line chart
 
 let contextDaily = document.getElementById('traffic');
 let traffic = new Chart(contextDaily, {
@@ -130,5 +129,4 @@ let mobileUsers = new Chart(contextUsers, {
             padding: 15
         }
     }
-
 });
