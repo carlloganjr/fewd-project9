@@ -172,6 +172,9 @@ nav {
   display: none;
   z-index: 102; }
 
+.hide {
+  display: none; }
+
 .social-container {
   list-style: none;
   display: flex;
