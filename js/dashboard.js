@@ -1,6 +1,6 @@
-// $('.alertClose').on('click', function() {
-//   $('.mainAlert').css('display', 'none');
-// });
+$('.alertClose').on('click', function() {
+  $('.mainAlert').remove();
+});
 
 const chartDiv =  document.getElementById('chart-buttons');
 const chartList = chartDiv.children;
