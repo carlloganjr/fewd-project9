@@ -5,7 +5,7 @@
 .new-members img, .new-activity img, .dash, main h2 {
   float: left; }
 
-.alertClose, .arrow {
+.alertClose, .sentClose, .arrow {
   float: right; }
 
 .social-widget p, .google-heading,
@@ -28,7 +28,7 @@ button[name="cancel"], button[name="send"] {
   button[name="cancel"]:focus, button[name="send"]:focus, button[name="save"]:hover,
   button[name="cancel"]:hover, button[name="send"]:hover {
     color: #fff;
-    background: #8080ff; }
+    opacity: .7; }
 
 select, #userSearch {
   width: 80%;
@@ -40,7 +40,7 @@ select, #userSearch {
   transition: all .5s ease-in-out;
   text-indent: .75rem; }
   select:focus, #userSearch:focus {
-    background: #8080ff; }
+    background: lavender; }
 
 nav {
   display: flex;
@@ -112,6 +112,13 @@ nav {
     opacity: 0; }
   to {
     opacity: 1; } }
+@keyframes popup {
+  from {
+    opacity: 0;
+    z-index: -1; }
+  to {
+    opacity: 1;
+    z-index: 100; } }
 .mainAlert {
   width: 89%;
   padding: 0.5rem;
@@ -128,40 +135,40 @@ nav {
     padding: 0;
     margin: auto; }
 
-.alertClose {
+.alertClose, .sentClose {
   color: #fff;
   font-size: .8rem;
   font-weight: bold;
   position: relative;
   top: -.85rem;
   right: -.2rem;
-  background: #8080ff;
+  background: lavender;
   border-radius: 50%;
   padding: 0 .35rem .2rem .35rem;
   cursor: default;
   transition: all .3s ease-in-out; }
-  .alertClose:hover {
+  .alertClose:hover, .sentClose:hover {
     background: #fff;
     color: #7733ff; }
 
 #sent {
   text-align: center;
   font-size: 1rem;
-  color: #400080;
+  color: #fff;
   white-space: nowrap;
-  width: 50%;
+  width: 90%;
   padding: 0.5rem;
   margin: auto;
   height: 3.5rem;
-  background: rgba(119, 51, 255, 0.5);
+  background: rgba(119, 51, 255, 0.35);
   border-radius: 0.5rem;
   position: absolute;
-  left: 22.5%;
-  z-index: 100;
+  left: 2.5%;
+  z-index: -1;
   opacity: 0; }
 
 .show {
-  animation: 1s ease-in .4s forwards alertFade; }
+  animation: 1s ease-in .1s forwards popup; }
 
 #requireUser {
   display: none;
@@ -173,6 +180,34 @@ nav {
 
 .hide {
   display: none; }
+
+#error {
+  position: relative;
+  opacity: 0;
+  z-index: -1; }
+
+#error::after {
+  position: absolute;
+  z-index: 900;
+  color: #fff;
+  width: 35%;
+  padding: 0.5rem;
+  margin: auto;
+  background: rgba(119, 51, 255, 0.35);
+  border-radius: 0.5rem;
+  content: attr(data-error);
+  right: 7%;
+  top: 63px; }
+
+#error::before {
+  position: absolute;
+  z-index: 900;
+  border-style: solid;
+  border-width: 0 .5rem 1rem .5rem;
+  border-color: transparent transparent rgba(119, 51, 255, 0.35) transparent;
+  right: 35%;
+  top: 47px;
+  content: ""; }
 
 .social-container {
   list-style: none;
@@ -275,7 +310,7 @@ time {
   cursor: pointer;
   transition: all .5s ease-in-out; }
   .arrow:hover {
-    background: #8080ff;
+    background: lavender;
     color: #fff; }
 
 .switch-ios.switch-light input:checked ~ span {
@@ -308,7 +343,9 @@ button[name="cancel"]:hover {
   opacity: .7; }
 
 * {
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  position: initial;
+  z-index: 1; }
 
 h2 {
   font-size: 1rem;
@@ -409,8 +446,10 @@ main {
   border-radius: 1rem; }
 
 form {
-  border-bottom: 1px solid #7733ff;
-  position: initial; }
+  border-bottom: 1px solid #7733ff; }
+
+#userSearch::-webkit-calendar-picker-indicator {
+  display: none; }
 
 #userMessage {
   width: 80%;
@@ -423,6 +462,6 @@ form {
   text-indent: -.5rem;
   transition: all .5s ease-in-out; }
   #userMessage:focus {
-    background: #8080ff; }
+    background: lavender; }
 
 /*# sourceMappingURL=dashboard.css.map */

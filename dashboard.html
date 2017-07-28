@@ -134,22 +134,21 @@
     </section> <!-- end social widget  -->
 
     <section id="newMembers"> <!-- begin members widget  -->
-
     </section>
     <section id="recentActive">
-
     </section> <!-- end members widget  -->
 
     <form>
-
+      <h2 class="sectionTitle">MESSAGE USER</h2>
+      <p id="error" data-error="Please enter a valid user name"></p>
+      <input type="search" name="user_search" id="userSearch"
+      placeholder="Search for User" list="dataList">
+      <datalist id="dataList"></datalist>
       <div id="sent"> <!-- pop up alert 'message sent' -->
         <p>Message sent!</p>
-      </div>
-
-      <h2 class="sectionTitle">MESSAGE USER</h2>
-      <input type="search" name="user_search" id="userSearch"
-      placeholder="Search for User">
-      <textarea id="userMessage" name="user_message" placeholder="Message for User">
+        <span class="sentClose">x</span>
+      </div> <!-- pop up alert end -->
+      <textarea id="userMessage" name="user_message">
       </textarea>
       <button id="userButton" type="submit" name="send">SEND</button>
     </form>
@@ -186,6 +185,7 @@
       <button type="button" name="save">SAVE</button>
       <button type="reset" name="cancel">CANCEL</button>
     </div> <!-- end setting div -->
+
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"

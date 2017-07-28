@@ -1,11 +1,14 @@
 form {
   // border-top: $border-solid;
   border-bottom: $border-solid;
-  position: initial;
+  // position: initial;
 }
 
 #userSearch {
   @extend %inputs;
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
 }
 
 #userMessage {

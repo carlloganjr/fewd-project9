@@ -1,7 +1,7 @@
 $('document').ready(function() {
 
   $.ajax({
-    url: 'https://randomuser.me/api/?results=4&inc=name,email,picture&noinfo',
+    url: 'https://randomuser.me/api/?results=4&inc=name,email,picture&noinfo&nat=us',
     dataType: 'json',
     success: function(data) {
       // console.log(data);
@@ -11,6 +11,9 @@ $('document').ready(function() {
       let activityLIST = '<h2 class="sectionTitle">RECENT ACTIVITY</h2>';
       activityLIST += '<ul class="new-activity">';
 
+      const dataList = document.getElementById('dataList');
+      let listData = "";
+      let createData = [];
 
       for(let i = 0; i < data.results.length; i += 1) {
         let firstName = data.results[i].name.first;
@@ -37,6 +40,8 @@ $('document').ready(function() {
         activityLIST += '<span class="arrow">></span>';
         activityLIST += '</li>';
 
+        listData += '<option value="' + firstName + ' ' + lastName + '">';
+
       }; //end for loop
 
         memberLIST += '</ul>';
@@ -44,6 +49,8 @@ $('document').ready(function() {
 
         activityLIST += '</ul>';
         document.getElementById('recentActive').innerHTML = activityLIST;
+
+        dataList.innerHTML = listData;
 
     } //end success function
   }); //end ajax request

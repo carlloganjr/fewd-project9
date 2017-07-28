@@ -1,11 +1,15 @@
+// function to close alerts and popups
 $('.alertClose').on('click', function() {
-  $('.mainAlert').remove();
+  $(this).parent().remove();
 });
 
 const chartDiv =  document.getElementById('chart-buttons');
 const chartList = chartDiv.children;
 const sendButton = document.getElementById('userButton');
 const sent = document.getElementById('sent');
+const userSearch = document.getElementById('userSearch');
+const userList = document.getElementById('dataList');
+const userError = document.getElementById('error');
 // const closeAlert = document.getElementsByClassName('alertClose');
 // const mainAlertDiv = document.getElementById('theAlert');
 
@@ -98,7 +102,21 @@ chartDiv.addEventListener('click', function(e) {
 // form event starts
 sendButton.addEventListener('click', function(e) {
   e.preventDefault();
-  if (e.target == sendButton) {
-    sent.classList.add('show');
+  for(let i = 0; i < userList.options.length; i += 1) {
+    let autoList = userList.options[i].value.toLowerCase();
+    let searched = userSearch.value.toLowerCase();
+    console.log(autoList);
+
+    if(searched == "") {
+      userError.classList.add('show');
+    } else {
+      sent.classList.add('show');
+    }
   }
+  // sent.classList.add('show');
+});
+
+ // hide 'sent' popup message
+$('.sentClose').on('click', function() {
+  $(sent).removeClass('show');
 });

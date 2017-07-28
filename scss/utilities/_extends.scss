@@ -38,7 +38,7 @@
   &:focus,
   &:hover {
     color: $input-text;
-    @include b-styles($input-focus);
+    opacity: .7;
   }
 }
 

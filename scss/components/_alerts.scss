@@ -3,6 +3,11 @@
   to {opacity: 1;}
 }
 
+@keyframes popup {
+  from {opacity: 0; z-index: -1;}
+  to {opacity: 1; z-index: 100;}
+}
+
 .mainAlert {
   @include sizeBox(89%, .5rem, 1rem auto);
   @include b-styles($alert-bg, null, .5rem);
@@ -34,22 +39,26 @@
   }
 }
 
+.sentClose {
+  @extend .alertClose;
+}
+
 #sent {
   text-align: center;
   font-size: 1rem;
-  color: $user-border;
+  color: $alert-text;
   white-space: nowrap;
-  @include sizeBox(50%, .5rem, auto, 3.5rem);
-  @include b-styles($sentPopUp, null, .5rem);
+  @include sizeBox(90%, .5rem, auto, 3.5rem);
+  @include b-styles($alertPopUp, null, .5rem);
   position: absolute;
   // bottom: 200px;
-  left: 22.5%;
-  z-index: 100;
+  left: 2.5%;
+  z-index: -1;
   opacity: 0;
 }
 
 .show {
-  animation: 1s ease-in .4s forwards alertFade;
+  animation: 1s ease-in .1s forwards popup;
 }
 
 #requireUser {
@@ -64,4 +73,32 @@
 
 .hide {
   display: none;
+}
+
+#error {
+  position: relative;
+  opacity: 0;
+  z-index: -1;
+}
+
+#error::after {
+  position: absolute;
+  z-index: 900;
+  color: $alert-text;
+  @include sizeBox(35%, .5rem, auto);
+  @include b-styles($alertPopUp, null, .5rem);
+  content: attr(data-error);
+  right: 7%;
+  top: 63px;
+}
+
+#error::before {
+  position: absolute;
+  z-index: 900;
+  border-style: solid;
+  border-width: 0 .5rem 1rem .5rem;
+  border-color: transparent transparent $alertPopUp transparent;
+  right: 35%;
+  top: 47px;
+  content: "";
 }
