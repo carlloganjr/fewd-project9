@@ -22,7 +22,7 @@
 }
 
 .alertClose {
-  color: $alert-text;
+  color: $alertClose;
   font-size: .8rem;
   font-weight: bold;
   @extend %float-r;
@@ -34,8 +34,8 @@
   cursor: default;
   transition: all .3s ease-in-out;
   &:hover {
-    background: $alert-text;
-    color: $alert-bg;
+    background: $alertClose;
+    color: $input-focus;
   }
 }
 
@@ -75,30 +75,29 @@
   display: none;
 }
 
-#error {
+#error,
+#messageError {
   position: relative;
   opacity: 0;
   z-index: -1;
 }
 
 #error::after {
-  position: absolute;
-  z-index: 900;
-  color: $alert-text;
-  @include sizeBox(35%, .5rem, auto);
-  @include b-styles($alertPopUp, null, .5rem);
-  content: attr(data-error);
-  right: 7%;
-  top: 63px;
+  @extend %errorAfter;
+  top: 54px;
 }
 
 #error::before {
-  position: absolute;
-  z-index: 900;
-  border-style: solid;
-  border-width: 0 .5rem 1rem .5rem;
-  border-color: transparent transparent $alertPopUp transparent;
-  right: 35%;
-  top: 47px;
-  content: "";
+  @extend %errorBefore;
+  top: 44px;
+}
+
+#messageError::after {
+  @extend %errorAfter;
+  top: 147px;
+}
+
+#messageError::before {
+  @extend %errorBefore;
+  top: 137px;
 }

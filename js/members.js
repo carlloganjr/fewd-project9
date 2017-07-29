@@ -40,7 +40,7 @@ $('document').ready(function() {
         activityLIST += '<span class="arrow">></span>';
         activityLIST += '</li>';
 
-        listData += '<option value="' + firstName + ' ' + lastName + '">';
+        listData += '<option class="searchOptions" value="' + firstName + ' ' + lastName + '">';
 
       }; //end for loop
 

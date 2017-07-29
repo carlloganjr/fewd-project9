@@ -51,3 +51,23 @@
     @include b-styles($input-focus);
   }
 }
+
+%errorAfter {
+  position: absolute;
+  z-index: 100;
+  color: $alert-text;
+  @include sizeBox(250px, .3rem, auto);
+  @include b-styles($alertPopUp, null, .5rem);
+  content: attr(data-error);
+  left: 10%;
+}
+
+%errorBefore {
+  position: absolute;
+  z-index: 100;
+  border-style: solid;
+  border-width: 0 .3rem .65rem .3rem;
+  border-color: transparent transparent $alertPopUp transparent;
+  left: 25%;
+  content: "";
+}

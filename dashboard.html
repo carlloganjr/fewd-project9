@@ -140,7 +140,7 @@
 
     <form>
       <h2 class="sectionTitle">MESSAGE USER</h2>
-      <p id="error" data-error="Please enter a valid user name"></p>
+      <p id="error" data-error="Please enter a valid user name."></p>
       <input type="search" name="user_search" id="userSearch"
       placeholder="Search for User" list="dataList">
       <datalist id="dataList"></datalist>
@@ -148,6 +148,7 @@
         <p>Message sent!</p>
         <span class="sentClose">x</span>
       </div> <!-- pop up alert end -->
+      <p id="messageError" data-error="Please enter a message to send."></p>
       <textarea id="userMessage" name="user_message">
       </textarea>
       <button id="userButton" type="submit" name="send">SEND</button>

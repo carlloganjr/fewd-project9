@@ -8,10 +8,12 @@ const chartList = chartDiv.children;
 const sendButton = document.getElementById('userButton');
 const sent = document.getElementById('sent');
 const userSearch = document.getElementById('userSearch');
+const userForm = document.querySelector('form');
 const userList = document.getElementById('dataList');
 const userError = document.getElementById('error');
-// const closeAlert = document.getElementsByClassName('alertClose');
-// const mainAlertDiv = document.getElementById('theAlert');
+const userMessage = document.getElementById('userMessage');
+const searchOptions = document.getElementsByClassName('searchOptions');
+const found = document.getElementsByClassName('found');
 
 //====================================
 // Hourly set to default on load
@@ -100,21 +102,54 @@ chartDiv.addEventListener('click', function(e) {
 
 //===================================
 // form event starts
+
+userSearch.addEventListener('input', function() {
+  for(let i = 0; i < userList.options.length; i += 1) {
+    let autoList = userList.options[i].value.toString().toUpperCase();
+    let searched = userSearch.value.toString().toUpperCase();
+
+    if(searched === autoList) { // adds 'found' class to be used as condition
+      searchOptions[i].classList.add('found');
+    }
+
+    if(searched.search('[A-z]') == -1) { // removes 'found' class
+      searchOptions[i].classList.remove('found');
+    } // end if statement
+  }  // end for loop
+}); // end input event
+
 sendButton.addEventListener('click', function(e) {
   e.preventDefault();
   for(let i = 0; i < userList.options.length; i += 1) {
-    let autoList = userList.options[i].value.toLowerCase();
-    let searched = userSearch.value.toLowerCase();
-    console.log(autoList);
+    let autoList = userList.options[i].value.toString().toUpperCase();
+    let searched = userSearch.value.toString().toUpperCase();
+    let textExists = userMessage.value.toString();
+    // let matchText = autoList.search(searched);
+    // let searchTimes = 0;
 
-    if(searched == "") {
-      userError.classList.add('show');
-    } else {
+
+
+    if(searched === autoList && textExists.search('[A-z]') > -1) {
       sent.classList.add('show');
-    }
-  }
-  // sent.classList.add('show');
-});
+    } else if (textExists.search('[A-z]') == -1) {
+      messageError.classList.add('show');
+    } // end if statement
+
+    if(found == 'found') {
+      userError.classList.remove('show');
+    } else if(searched.search('[A-z]') == -1 || found.length < 1) {
+      userError.classList.add('show');
+    } // end if statement
+  }  // end for loop
+}); // end click event
+
+userForm.addEventListener('keyup', function() {
+  if(userError.classList == 'show') {
+    userError.classList.remove('show');
+  } else if(messageError.classList == 'show') {
+    messageError.classList.remove('show');
+  } // end if statement
+}); // end keyup event
 
  // hide 'sent' popup message
 $('.sentClose').on('click', function() {
