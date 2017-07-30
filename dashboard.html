@@ -13,23 +13,32 @@
   <body>
     <header>
       <h1><b>This</b>App&trade;</h1>
-      <svg version="1.1" id="icon-bell" xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;"
-         xml:space="preserve" class="flex-header">
-      <style type="text/css">
-      	/*.st0{fill:#FFFFFF;}*/
-      </style>
-      <g id="_x36__6_">
-      	<g>
-      		<path class="bell-path" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,
-            8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
-      			c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,
-            24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
-      	</g>
-      </g>
-      </svg>
-      <span class="userName flex-header">User Name</span>
+      <a class="iconHover" id="notificationBell">
+        <svg version="1.1" id="icon-bell" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;"
+           xml:space="preserve" class="flex-header">
+        <style type="text/css">
+        	/*.st0{fill:#FFFFFF;}*/
+        </style>
+        <g id="_x36__6_">
+        	<g>
+        		<path class="bell-path" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,
+              8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+        			c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,
+              24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+        	</g>
+        </g>
+        </svg>
+        <span class="iconNotify" data-icon="3"></span>
+      </a>
+      <div class="notifyDiv">
+        <span class="notifyHide" data-icon="This is your first notification today!">
+        </span>
+        <span class="notifyHide" data-icon="Two notifications! You're quite popular!">
+        </span>
+      </div>
+      <span class="userName flex-header">Carl Logan</span>
     </header>
 
     <nav>
@@ -48,8 +57,8 @@
     </div>
 
     <div class="mainAlert" id="theAlert">
-      <p>You have 17 new ThisApp messages.  These messages will automatically
-        expire in 90 days.</p>
+      <p><b>ALERT: </b>Whatever you do, dont click the 'x' in the lower right
+      hand corner!</p>
         <span class="alertClose">x</span>
     </div>
 

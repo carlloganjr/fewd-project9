@@ -14,6 +14,7 @@ const userError = document.getElementById('error');
 const userMessage = document.getElementById('userMessage');
 const searchOptions = document.getElementsByClassName('searchOptions');
 const found = document.getElementsByClassName('found');
+const notificationIcon = document.getElementById('notificationBell');
 
 //====================================
 // Hourly set to default on load
@@ -154,4 +155,10 @@ userForm.addEventListener('keyup', function() {
  // hide 'sent' popup message
 $('.sentClose').on('click', function() {
   $(sent).removeClass('show');
+});
+
+// show notifications
+notificationBell.addEventListener('click', function(e) {
+  const showNotification = document.querySelector('.notifyHide');
+  showNotification.classList.add('notifyShow');
 });

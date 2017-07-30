@@ -22,25 +22,11 @@
 }
 
 .alertClose {
-  color: $alertClose;
-  font-size: .8rem;
-  font-weight: bold;
-  @extend %float-r;
-  position: relative;
-  top: -.85rem;
-  right: -.2rem;
-  @include b-styles($input-focus, null, 50%);
-  padding: 0 .35rem .2rem .35rem;
-  cursor: default;
-  transition: all .3s ease-in-out;
-  &:hover {
-    background: $alertClose;
-    color: $input-focus;
-  }
+  @extend %alertClose;
 }
 
 .sentClose {
-  @extend .alertClose;
+  @extend %alertClose;
 }
 
 #sent {
@@ -58,7 +44,7 @@
 }
 
 .show {
-  animation: 1s ease-in .1s forwards popup;
+  animation: .5s ease-in .1s forwards popup;
 }
 
 #requireUser {
@@ -94,7 +80,7 @@
 
 #messageError::after {
   @extend %errorAfter;
-  top: 147px;
+  top: 148px;
 }
 
 #messageError::before {

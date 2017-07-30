@@ -28,6 +28,7 @@ h1,
   null,
   1.5rem);
   overflow: visible;
+  cursor: pointer;
 
 }
 
@@ -39,8 +40,6 @@ h1,
 #icon-bell:hover .bell-path,
 #icon-bell:focus .bell-path {
   fill: $icon-hover;
-  // transform: rotate(20deg);
-  // transform-origin: top;
 }
 
 .flex-header {
@@ -51,4 +50,87 @@ h1,
   white-space: nowrap;
   border-left: 1px solid $user-border;
   padding: .5rem 0 .5rem 1rem;
+}
+
+.iconNotify {
+  position: relative;
+  z-index: 200;
+}
+
+.iconNotify::after {
+  position: absolute;
+  z-index: 200;
+  @include b-styles($iconNotification, null, 50%);
+  @include sizeBox(.5rem, .1rem .25rem .4rem .25rem, 0, .5rem);
+  content: attr(data-icon);
+  font-size: .7rem;
+  color: $notificationText;
+  right: 20px;
+  top: -3px;
+  text-align: center;
+}
+
+@keyframes notifyHop {
+  from {top: -5px;}
+  to {top: 3px;}
+}
+
+.iconHover:hover .iconNotify::after {
+  animation: notifyHop .25s ease-in .3s infinite;
+}
+
+.iconHover {
+  align-self: center;
+  display: inline-flex;
+}
+
+.notifyDiv {
+  z-index: 900;
+}
+
+.notifyShow {
+  position: relative;
+  z-index: -5;
+}
+
+.notifyHide {
+  position: relative;
+  z-index: 999;
+}
+
+@keyframes dropDown {
+  from {
+    right: 20px;
+    top: -3px;
+    @include b-styles($iconNotification, null, 50%);
+    @include sizeBox(.5rem, .1rem .25rem .4rem .25rem, 0, .5rem);
+    color: $notificationText;
+    opacity: 0;
+    font-size: .7rem;
+    z-index: -5;
+  }
+  to {
+    z-index: 999;
+    background: $header-bg;
+    width: 250px;
+    height: 40px;
+    border-radius: 0 0 .25rem .25rem;
+    padding: 1rem;
+    top: 32px;
+    right: -90px;
+    font-size: .9rem;
+    opacity: 1;
+    color: $alert-text;
+    // border-bottom: solid 2px $user-border;
+  }
+}
+
+.notifyHide::after {
+  @extend .iconNotify::after;
+  z-index: -5;
+  opacity: 0;
+}
+
+.notifyShow::after {
+  animation: dropDown .3s ease-in .2s forwards;
 }
