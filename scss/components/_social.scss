@@ -8,9 +8,9 @@
     @include flex(1, null, null, nowrap, column);
   }
   &-widget {
-    @include sizeBox(90%, null, 2.5% auto);
+    @include sizeBox(90%, null, .5rem auto);
     max-width: 375px;
-    min-width: 287px;
+    min-width: 294px;
     @include b-styles(
     $social-bg,
     2px solid $social-border,
