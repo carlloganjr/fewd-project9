@@ -15,6 +15,9 @@ const userMessage = document.getElementById('userMessage');
 const searchOptions = document.getElementsByClassName('searchOptions');
 const found = document.getElementsByClassName('found');
 const notificationIcon = document.getElementById('notificationBell');
+const showNotification = document.querySelector('.notifyDiv');
+const notificationCircle = document.querySelector('.iconNotify');
+const notification = document.getElementsByClassName('notifications');
 
 //====================================
 // Hourly set to default on load
@@ -128,8 +131,6 @@ sendButton.addEventListener('click', function(e) {
     // let matchText = autoList.search(searched);
     // let searchTimes = 0;
 
-
-
     if(searched === autoList && textExists.search('[A-z]') > -1) {
       sent.classList.add('show');
     } else if (textExists.search('[A-z]') == -1) {
@@ -159,6 +160,21 @@ $('.sentClose').on('click', function() {
 
 // show notifications
 notificationBell.addEventListener('click', function(e) {
-  const showNotification = document.querySelector('.notifyHide');
-  showNotification.classList.add('notifyShow');
+
+  showNotification.classList.add('notifyShow'); // show dropdown notifications
+
+  if(showNotification.classList = 'notifyShow') { // remove notification cicle
+    $(notificationCircle).remove();
+  }
+});
+
+showNotification.addEventListener('click', function(e) {
+  for(let i = 0; i < notification.length; i++) {
+    if(e.target == notification[i]) {
+      $(notification[i]).remove();
+    }
+  }
+  if(notification.length === 0) {
+    $(this).remove();
+  }
 });

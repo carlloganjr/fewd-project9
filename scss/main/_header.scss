@@ -55,20 +55,21 @@ h1,
 .iconNotify {
   position: relative;
   z-index: 200;
+  &::after {
+    position: absolute;
+    z-index: 200;
+    @include b-styles($iconNotification, null, 50%);
+    @include sizeBox(.5rem, .1rem .25rem .4rem .25rem, 0, .5rem);
+    content: attr(data-icon);
+    font-size: .7rem;
+    color: $notificationText;
+    right: 20px;
+    top: -3px;
+    text-align: center;
+  }
 }
 
-.iconNotify::after {
-  position: absolute;
-  z-index: 200;
-  @include b-styles($iconNotification, null, 50%);
-  @include sizeBox(.5rem, .1rem .25rem .4rem .25rem, 0, .5rem);
-  content: attr(data-icon);
-  font-size: .7rem;
-  color: $notificationText;
-  right: 20px;
-  top: -3px;
-  text-align: center;
-}
+
 
 @keyframes notifyHop {
   from {top: -5px;}
@@ -84,53 +85,60 @@ h1,
   display: inline-flex;
 }
 
-.notifyDiv {
-  z-index: 900;
-}
-
-.notifyShow {
-  position: relative;
-  z-index: -5;
-}
-
-.notifyHide {
-  position: relative;
-  z-index: 999;
-}
-
 @keyframes dropDown {
   from {
-    right: 20px;
-    top: -3px;
-    @include b-styles($iconNotification, null, 50%);
-    @include sizeBox(.5rem, .1rem .25rem .4rem .25rem, 0, .5rem);
-    color: $notificationText;
-    opacity: 0;
-    font-size: .7rem;
+    position: absolute;
     z-index: -5;
+    width: 280px;
+    top: 40px;
+    left: 25%;
+    opacity: 0;
   }
   to {
-    z-index: 999;
-    background: $header-bg;
-    width: 250px;
-    height: 40px;
-    border-radius: 0 0 .25rem .25rem;
-    padding: 1rem;
-    top: 32px;
-    right: -90px;
-    font-size: .9rem;
+    position: absolute;
+    z-index: 1000;
+    @include sizeBox(90%, .5rem);
+    @include b-styles($header-bg, null, 0 0 .5rem .5rem);
+    line-height: 2;
+    font-size: .85rem;
+    top: 40px;
+    left: 2%;
     opacity: 1;
-    color: $alert-text;
-    // border-bottom: solid 2px $user-border;
   }
 }
 
-.notifyHide::after {
-  @extend .iconNotify::after;
+.notifyDiv {
+  position: absolute;
   z-index: -5;
+  width: 280px;
+  left: 25%;
   opacity: 0;
 }
 
-.notifyShow::after {
-  animation: dropDown .3s ease-in .2s forwards;
+.notifications {
+  color: $notificationText;
+  @include b-styles($input-bg, solid 1px $alertClose, .25rem);
+  padding: .1rem;
+  position: relative;
+  &::after {
+    color: $alertClose;
+    font-size: .6rem;
+    font-weight: bold;
+    content: "X";
+    padding: .05rem .45rem 0 .45rem;
+    margin-left: 5px;
+    cursor: default;
+    transition: all .3s ease-in-out;
+    @include b-styles($input-bg, solid 1px $alertClose, 50%);
+    position: absolute;
+    bottom: 0;
+  }
+  &:hover::after {
+    background: $alertClose;
+    color: $input-focus;
+  }
+}
+
+.notifyShow {
+  animation: dropDown .2s ease-out forwards;
 }

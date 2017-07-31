@@ -417,78 +417,88 @@ h1,
 .iconNotify {
   position: relative;
   z-index: 200; }
-
-.iconNotify::after, .notifyHide::after {
-  position: absolute;
-  z-index: 200;
-  background: lime;
-  border-radius: 50%;
-  width: 0.5rem;
-  padding: 0.1rem 0.25rem 0.4rem 0.25rem;
-  margin: 0;
-  height: 0.5rem;
-  content: attr(data-icon);
-  font-size: .7rem;
-  color: #400080;
-  right: 20px;
-  top: -3px;
-  text-align: center; }
-
-@keyframes notifyHop {
-  from {
-    top: -5px; }
-  to {
-    top: 3px; } }
-.iconHover:hover .iconNotify::after, .iconHover:hover .notifyHide::after {
-  animation: notifyHop .25s ease-in .3s infinite; }
-
-.iconHover {
-  align-self: center;
-  display: inline-flex; }
-
-.notifyDiv {
-  z-index: 900; }
-
-.notifyShow {
-  position: relative;
-  z-index: -5; }
-
-.notifyHide {
-  position: relative;
-  z-index: 999; }
-
-@keyframes dropDown {
-  from {
-    right: 20px;
-    top: -3px;
+  .iconNotify::after {
+    position: absolute;
+    z-index: 200;
     background: lime;
     border-radius: 50%;
     width: 0.5rem;
     padding: 0.1rem 0.25rem 0.4rem 0.25rem;
     margin: 0;
     height: 0.5rem;
-    color: #400080;
-    opacity: 0;
+    content: attr(data-icon);
     font-size: .7rem;
-    z-index: -5; }
+    color: #400080;
+    right: 20px;
+    top: -3px;
+    text-align: center; }
+
+@keyframes notifyHop {
+  from {
+    top: -5px; }
   to {
-    z-index: 999;
+    top: 3px; } }
+.iconHover:hover .iconNotify::after {
+  animation: notifyHop .25s ease-in .3s infinite; }
+
+.iconHover {
+  align-self: center;
+  display: inline-flex; }
+
+@keyframes dropDown {
+  from {
+    position: absolute;
+    z-index: -5;
+    width: 280px;
+    top: 40px;
+    left: 25%;
+    opacity: 0; }
+  to {
+    position: absolute;
+    z-index: 1000;
+    width: 90%;
+    padding: 0.5rem;
     background: #8080ff;
-    width: 250px;
-    height: 40px;
-    border-radius: 0 0 .25rem .25rem;
-    padding: 1rem;
-    top: 32px;
-    right: -90px;
-    font-size: .9rem;
-    opacity: 1;
-    color: #fff; } }
-.notifyHide::after {
+    border-radius: 0 0 0.5rem 0.5rem;
+    line-height: 2;
+    font-size: .85rem;
+    top: 40px;
+    left: 2%;
+    opacity: 1; } }
+.notifyDiv {
+  position: absolute;
   z-index: -5;
+  width: 280px;
+  left: 25%;
   opacity: 0; }
 
-.notifyShow::after {
-  animation: dropDown .3s ease-in .2s forwards; }
+.notifications {
+  color: #400080;
+  background: #f0f1f1;
+  border: solid 1px #400080;
+  border-radius: 0.25rem;
+  padding: .1rem;
+  position: relative; }
+  .notifications::after {
+    color: #400080;
+    font-size: .6rem;
+    font-weight: bold;
+    content: "X";
+    padding: .05rem .45rem 0 .45rem;
+    margin-left: 5px;
+    cursor: default;
+    transition: all .3s ease-in-out;
+    background: #f0f1f1;
+    border: solid 1px #400080;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0; }
+  .notifications:hover::after {
+    background: #400080;
+    color: lavender; }
+
+.notifyShow {
+  animation: dropDown .2s ease-out forwards; }
 
 main {
   flex: 1;
