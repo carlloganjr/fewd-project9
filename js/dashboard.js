@@ -18,6 +18,12 @@ const notificationIcon = document.getElementById('notificationBell');
 const showNotification = document.querySelector('.notifyDiv');
 const notificationCircle = document.querySelector('.iconNotify');
 const notification = document.getElementsByClassName('notifications');
+const sendEmail = document.getElementById('sendEmail');
+const setProfile = document.getElementById('setProfile');
+const settingsDiv = document.querySelector('.settings');
+const saveSettings = document.getElementById('saveButton');
+const cancelSettings = document.getElementById('cancelButton');
+const timeSelect = document.getElementById('timeZone');
 
 //====================================
 // Hourly set to default on load
@@ -166,9 +172,9 @@ notificationBell.addEventListener('click', function(e) {
   if(showNotification.classList = 'notifyShow') { // remove notification cicle
     $(notificationCircle).remove();
   }
-});
+}); // end show notifications
 
-showNotification.addEventListener('click', function(e) {
+showNotification.addEventListener('click', function(e) { // header notifications
   for(let i = 0; i < notification.length; i++) {
     if(e.target == notification[i]) {
       $(notification[i]).remove();
@@ -177,4 +183,41 @@ showNotification.addEventListener('click', function(e) {
   if(notification.length === 0) {
     $(this).remove();
   }
+}); // end header notifications
+
+function isLocalStorage() { // test for localStorage
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null
+  } catch(e) {
+    return false;
+  }
+}
+
+settingsDiv.addEventListener('click', function(e) {
+  if(isLocalStorage()) {
+    if(e.target === saveSettings) {
+      if(sendEmail.checked == true) {
+        localStorage.setItem('emailChecked', true);
+      } else {
+        localStorage.removeItem('emailChecked');
+      }// end if statement
+
+      if(setProfile.checked == true) {
+        localStorage.setItem('profileChecked', true);
+      } else {
+        localStorage.removeItem('profileChecked');
+      } // end if statement// end if statement
+
+      let selectTime = timeSelect.options.selectedIndex; //  time zone select
+      localStorage.setItem('timeNumber', selectTime);
+
+    } // end e.target
+  } // end test for localStorage
+});
+
+window.addEventListener('load', function() {
+  sendEmail.checked = localStorage.emailChecked;
+  setProfile.checked = localStorage.profileChecked;
+  timeSelect.options.selectedIndex = parseInt(localStorage.timeNumber);
+  ;
 });

@@ -165,7 +165,7 @@
       <h2 class="sectionTitle">SETTINGS</h2>
       <span class="settingSpan">Send Email Notifications</span>
       <label class="switch-light switch-ios" onclick="">
-        <input type="checkbox">
+        <input id="sendEmail" type="checkbox">
           <span>
             <span>Off</span>
             <span>On</span>
@@ -174,7 +174,7 @@
       </label> <!-- end email toggle -->
       <span class="settingSpan">Set Profile to Public</span>
       <label class="switch-light switch-ios" onclick="">
-        <input type="checkbox">
+        <input id="setProfile" type="checkbox">
           <span>
             <span>Off</span>
             <span>On</span>
@@ -190,8 +190,8 @@
        <option value="-5.0">(GMT -5:00) Eastern Time</option>
        <option value="-4.0">(GMT -4:00) Atlantic Time</option>
       </select>
-      <button type="button" name="save">SAVE</button>
-      <button type="reset" name="cancel">CANCEL</button>
+      <button id="saveButton" type="button" name="save">SAVE</button>
+      <button id="cancelButton" type="reset" name="cancel">CANCEL</button>
     </div> <!-- end setting div -->
 
 
