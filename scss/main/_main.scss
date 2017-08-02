@@ -7,6 +7,12 @@
 h2 {
   font-size: 1rem;
   margin-left: 1rem;
+  @include media('med') {
+    float: none;
+    margin: 0;
+    clear: none;
+    white-space: nowrap;
+  }
 }
 
 .dash {

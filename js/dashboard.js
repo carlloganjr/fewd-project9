@@ -8,7 +8,8 @@ const chartList = chartDiv.children;
 const sendButton = document.getElementById('userButton');
 const sent = document.getElementById('sent');
 const userSearch = document.getElementById('userSearch');
-const userForm = document.querySelector('form');
+const userForm = document.getElementById('membersForm');
+const userFormSettings = document.getElementById('settingsForm');
 const userList = document.getElementById('dataList');
 const userError = document.getElementById('error');
 const userMessage = document.getElementById('userMessage');
@@ -151,10 +152,10 @@ sendButton.addEventListener('click', function(e) {
   }  // end for loop
 }); // end click event
 
-userForm.addEventListener('keyup', function() {
-  if(userError.classList == 'show') {
+userForm.addEventListener('keyup', function(e) {
+  if(userError.classList == 'show' && e.target == userSearch) {
     userError.classList.remove('show');
-  } else if(messageError.classList == 'show') {
+  } else if(messageError.classList == 'show' && e.target == userMessage) {
     messageError.classList.remove('show');
   } // end if statement
 }); // end keyup event
@@ -213,6 +214,10 @@ settingsDiv.addEventListener('click', function(e) {
 
     } // end e.target
   } // end test for localStorage
+
+  if(e.target === cancelSettings) {
+    userFormSettings.reset();
+  }
 });
 
 window.addEventListener('load', function() {

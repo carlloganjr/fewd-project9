@@ -2,28 +2,36 @@
 main {
   @include flex(1, 1, null, nowrap, column);
   @include media('med') {
-    @include flex(1, null, null, wrap);
+    display: inline-block;
+    @include sizeBox(calc(100% - 80px), null, 0);
   }
 }
 
 .mainTraffic {
   border-bottom: 1px solid $canvas-border;
   @include media('med') {
-    @include flex(null, 2, $flexCalc);
+    max-height: 350px;
+  }
+  h2 {
+    @include media('med') {
+    position: absolute;
+    }
   }
 }
 
 .traffic {
   border-bottom: 1px solid $canvas-border;
   @include media('med') {
-    @include flex(null, null, $flexCalc);
-    @extend %canvasWidth;
+    float: left;
+    width: $flexCalc2;
+    border: none;
   }
 }
 
 .mobileUsers {
   @include media('med') {
-    @extend %canvasWidth;
+    float: right;
+    width: $flexCalc2;
   }
 }
 

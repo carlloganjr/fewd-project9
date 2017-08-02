@@ -1,3 +1,14 @@
+.social-section {
+  @include media('med') {
+    @extend %floatWidth;
+  }
+  h2 {
+    @include media('med') {
+      margin-bottom: -1.5rem;
+    }
+  }
+}
+
 .social {
   &-container {
     list-style: none;
@@ -6,6 +17,11 @@
     border-bottom: $border-solid;
     @include sizeBox(null, 1rem 0);
     @include flex(1, null, null, nowrap, column);
+    @include media('med') {
+      @include flex(1, 1, null, nowrap, row);
+      justify-content: space-between;
+      @include sizeBox(null, 2rem 0, 0);
+    }
   }
   &-widget {
     @include sizeBox(90%, null, .5rem auto);
@@ -15,6 +31,11 @@
     $social-bg,
     2px solid $social-border,
     .5rem);
+    @include media('med') {
+      @include sizeBox(30%, null, 0 1%);
+      min-width: inherit;
+      max-height: 100px;
+    }
     svg {
       @include sizeBox(2rem, 1rem, 1rem 0 1rem 1rem, 2rem);
       @include b-styles($social-widget, null, 50%);
@@ -27,6 +48,10 @@
       clear: right;
       @include sizeBox(null, 0, 0);
       transform: translate(-35%, 1rem);
+      @include media('med') {
+        font-size: 2rem;
+        transform: translate(-1.5rem, 2.5rem);
+      }
     }
   }
 }
@@ -37,16 +62,28 @@
   font-size: 1rem;
   @extend %floatNposition;
   @include sizeBox(null, 0, 0);
+  @include media('med') {
+    font-size: 1rem;
+  }
 }
 
 .google-heading {
   transform: translate(-6rem, 1.25rem);
+  @include media('med') {
+    transform: translate(-3.5rem, 1.5rem);
+  }
 }
 
 .twitter-heading {
   transform: translate(-6.1rem, 1.25rem);
+  @include media('med') {
+    transform: translate(-3.5rem, 1.5rem);
+  }
 }
 
 .facebook-heading {
   transform: translate(-5rem, 1.25rem);
+  @include media('med') {
+    transform: translate(-2.25rem, 1.5rem);
+  }
 }

@@ -38,8 +38,8 @@ $break-l: "(min-width: 1024px)";
 
 //========= SIZING & POSTION ===========
 
-$flexCalc: calc(100% - 5rem);
-$flexCalc2: calc((100% - 5rem) / 2);
+$flexCalc: calc(100% - 80px);
+$flexCalc2: calc((100% - 80px) / 2);
 $flex320: calc(100% - 3rem);
 $position1: absolute;
 $position2: relative;

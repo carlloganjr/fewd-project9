@@ -36,6 +36,7 @@
         <span class="notifications">This is your first notification today!</span><br>
         <span class="notifications">Two notifications! You're quite popular!</span>
       </div>
+      <span class="userImage"></span>
       <span class="userName flex-header">Carl Logan</span>
     </header>
 
@@ -55,8 +56,7 @@
     </div>
 
     <div class="mainAlert" id="theAlert">
-      <p><b>ALERT: </b>Whatever you do, dont click the 'x' in the lower right
-      hand corner!</p>
+      <p><b>ALERT: </b>Listen very carefully, whatever you do, dont click the 'x' in the corner!</p>
         <span class="alertClose">x</span>
     </div>
 
@@ -73,17 +73,17 @@
       </div>
       <div class="traffic">
         <h2>DAILY TRAFFIC</h2>
-        <canvas id="traffic"></canvas>
+        <canvas id="traffic" style="position: relative; height: 225px;"></canvas>
       </div>
       <div class="mobileUsers">
         <h2>MOBILE USERS</h2>
-        <canvas id="mobileUsers"></canvas>
+        <canvas id="mobileUsers" style="position: relative; height: 225px;"></canvas>
       </div>
     </main>
 
-    <section> <!-- begin social widget  -->
+    <section class="social-section"> <!-- begin social widget  -->
+      <h2>SOCIAL STATS</h2>
       <ul class="social-container">
-        <h2>SOCIAL STATS</h2>
         <li class="social-widget">
           <svg version="1.1" id="twitter" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -140,12 +140,14 @@
       </ul>
     </section> <!-- end social widget  -->
 
-    <section id="newMembers"> <!-- begin members widget  -->
-    </section>
-    <section id="recentActive">
-    </section> <!-- end members widget  -->
+    <div class="membersFlex">
+      <section id="newMembers"> <!-- begin members widget  -->
+      </section>
+      <section id="recentActive">
+      </section> <!-- end members widget  -->
+    </div>
 
-    <form>
+    <form id="membersForm" action="" method="post">
       <h2 class="sectionTitle">MESSAGE USER</h2>
       <p id="error" data-error="Please enter a valid user name."></p>
       <input type="search" name="user_search" id="userSearch"
@@ -159,40 +161,42 @@
       <textarea id="userMessage" name="user_message">
       </textarea>
       <button id="userButton" type="submit" name="send">SEND</button>
-    </form>
+    </form> <!-- end members form -->
 
-    <div class="settings"> <!-- begin setting div -->
-      <h2 class="sectionTitle">SETTINGS</h2>
-      <span class="settingSpan">Send Email Notifications</span>
-      <label class="switch-light switch-ios" onclick="">
-        <input id="sendEmail" type="checkbox">
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
-      </label> <!-- end email toggle -->
-      <span class="settingSpan">Set Profile to Public</span>
-      <label class="switch-light switch-ios" onclick="">
-        <input id="setProfile" type="checkbox">
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
-      </label> <!-- end profile toggle -->
-      <select id="timeZone" name="time_zone">
-        <option value="-10.0">(GMT -10:00) Hawaii</option>
-       <option value="-9.0">(GMT -9:00) Alaska</option>
-       <option value="-8.0">(GMT -8:00) Pacific Time</option>
-       <option value="-7.0">(GMT -7:00) Mountain Time</option>
-       <option value="-6.0">(GMT -6:00) Central Time</option>
-       <option value="-5.0">(GMT -5:00) Eastern Time</option>
-       <option value="-4.0">(GMT -4:00) Atlantic Time</option>
-      </select>
-      <button id="saveButton" type="button" name="save">SAVE</button>
-      <button id="cancelButton" type="reset" name="cancel">CANCEL</button>
-    </div> <!-- end setting div -->
+    <form id="settingsForm" action="" method="post">
+      <div class="settings"> <!-- begin setting div -->
+        <h2 class="sectionTitle">SETTINGS</h2>
+        <span class="settingSpan">Send Email Notifications</span>
+        <label class="switch-light switch-ios" onclick="">
+          <input id="sendEmail" type="checkbox">
+            <span>
+              <span>Off</span>
+              <span>On</span>
+              <a></a>
+            </span>
+        </label> <!-- end email toggle -->
+        <span class="settingSpan">Set Profile to Public</span>
+        <label class="switch-light switch-ios" onclick="">
+          <input id="setProfile" type="checkbox">
+            <span>
+              <span>Off</span>
+              <span>On</span>
+              <a></a>
+            </span>
+        </label> <!-- end profile toggle -->
+        <select id="timeZone" name="time_zone">
+          <option value="-10.0">(GMT -10:00) Hawaii</option>
+         <option value="-9.0">(GMT -9:00) Alaska</option>
+         <option value="-8.0">(GMT -8:00) Pacific Time</option>
+         <option value="-7.0">(GMT -7:00) Mountain Time</option>
+         <option value="-6.0">(GMT -6:00) Central Time</option>
+         <option value="-5.0">(GMT -5:00) Eastern Time</option>
+         <option value="-4.0">(GMT -4:00) Atlantic Time</option>
+        </select>
+        <button id="saveButton" type="button" name="save">SAVE</button>
+        <button id="cancelButton" type="reset" name="cancel">CANCEL</button>
+      </div> <!-- end setting div -->
+    </form> <!-- end settings form -->
 
 
 

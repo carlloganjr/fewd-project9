@@ -1,7 +1,7 @@
 @media (min-width: 768px) {
-  .traffic, .mobileUsers {
-    min-width: calc((100% - 5rem) / 2);
-    max-width: calc((100% - 5rem) / 2); } }
+  .social-section, .membersFlex {
+    width: calc(100% - 80px);
+    float: right; } }
 .new-members img, .new-activity img, .dash, main h2 {
   float: left; }
 
@@ -83,12 +83,13 @@ nav {
   display: flex;
   background: #7733ff;
   width: 100%;
-  height: 3rem;
-  /*height: 100%;*/ }
+  height: 3rem; }
   @media (min-width: 768px) {
     nav {
+      float: left;
       width: 5rem;
-      display: inline-block; } }
+      flex-direction: column;
+      height: inherit; } }
   nav li {
     padding: 1rem 0;
     margin: 0;
@@ -107,8 +108,11 @@ nav {
       max-width: 100%; }
     @media (min-width: 768px) {
       nav li {
+        flex-direction: column;
+        justify-content: flex-start;
         width: 2rem;
         padding: 1rem 0;
+        margin: 0 auto;
         height: 2rem; } }
 
 .nav-dash {
@@ -127,8 +131,9 @@ nav {
   border-bottom: 1px solid #d9d9d9; }
   @media (min-width: 768px) {
     .search-div {
-      width: 75%;
-      padding: 0.25rem; } }
+      width: 67%;
+      padding: 0.25rem;
+      float: right; } }
   .search-div p {
     display: none; }
 
@@ -136,7 +141,8 @@ nav {
   width: 75%;
   padding: 0.5rem;
   margin: 0.25rem 0.5rem;
-  border: 1px solid #d9d9d9; }
+  border: 1px solid #d9d9d9;
+  border-radius: 0.3rem; }
   @media (min-width: 768px) {
     #search {
       width: 35%;
@@ -166,6 +172,13 @@ nav {
   color: #fff;
   opacity: 0;
   animation: 1s ease-in .3s forwards alertFade; }
+  @media (min-width: 768px) {
+    .mainAlert {
+      float: right;
+      width: 80%;
+      margin: 0 4% 1rem 0;
+      height: 1.3rem;
+      clear: none; } }
   .mainAlert p {
     font-size: .88rem;
     width: 95%;
@@ -220,6 +233,10 @@ nav {
 #messageError::before {
   top: 137px; }
 
+@media (min-width: 768px) {
+  .social-section h2 {
+    margin-bottom: -1.5rem; } }
+
 .social-container {
   list-style: none;
   display: flex;
@@ -229,6 +246,15 @@ nav {
   flex: 1;
   flex-wrap: nowrap;
   flex-direction: column; }
+  @media (min-width: 768px) {
+    .social-container {
+      flex: 1;
+      flex-grow: 1;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2rem 0;
+      margin: 0; } }
 .social-widget {
   width: 90%;
   margin: 0.5rem auto;
@@ -237,6 +263,12 @@ nav {
   background: #f0f1f1;
   border: 2px solid #d9d9d9;
   border-radius: 0.5rem; }
+  @media (min-width: 768px) {
+    .social-widget {
+      width: 30%;
+      margin: 0 1%;
+      min-width: inherit;
+      max-height: 100px; } }
   .social-widget svg {
     width: 2rem;
     padding: 1rem;
@@ -252,6 +284,10 @@ nav {
     padding: 0;
     margin: 0;
     transform: translate(-35%, 1rem); }
+    @media (min-width: 768px) {
+      .social-widget p {
+        font-size: 2rem;
+        transform: translate(-1.5rem, 2.5rem); } }
 
 .google-heading,
 .twitter-heading,
@@ -259,15 +295,29 @@ nav {
   font-size: 1rem;
   padding: 0;
   margin: 0; }
+  @media (min-width: 768px) {
+    .google-heading,
+    .twitter-heading,
+    .facebook-heading {
+      font-size: 1rem; } }
 
 .google-heading {
   transform: translate(-6rem, 1.25rem); }
+  @media (min-width: 768px) {
+    .google-heading {
+      transform: translate(-3.5rem, 1.5rem); } }
 
 .twitter-heading {
   transform: translate(-6.1rem, 1.25rem); }
+  @media (min-width: 768px) {
+    .twitter-heading {
+      transform: translate(-3.5rem, 1.5rem); } }
 
 .facebook-heading {
   transform: translate(-5rem, 1.25rem); }
+  @media (min-width: 768px) {
+    .facebook-heading {
+      transform: translate(-2.25rem, 1.5rem); } }
 
 .new-members, .new-activity {
   list-style: none;
@@ -289,6 +339,20 @@ nav {
     padding: 0;
     margin: auto 1rem auto 0;
     height: 4rem; }
+
+@media (min-width: 768px) {
+  .membersFlex {
+    margin: 0;
+    display: flex;
+    flex-direction: row; } }
+
+@media (min-width: 768px) {
+  #newMembers,
+  #recentActive {
+    display: block;
+    flex: 1;
+    flex-grow: 1;
+    flex-basis: calc((100% - 80px) / 2); } }
 
 .new-activity {
   position: initial;
@@ -323,6 +387,12 @@ time {
   .arrow:hover {
     background: lavender;
     color: #fff; }
+
+@media (min-width: 768px) {
+  .sectionTitle {
+    float: none;
+    margin: 0;
+    clear: none; } }
 
 .switch-ios.switch-light input:checked ~ span {
   border-color: #7733ff;
@@ -361,6 +431,12 @@ button[name="cancel"]:hover {
 h2 {
   font-size: 1rem;
   margin-left: 1rem; }
+  @media (min-width: 768px) {
+    h2 {
+      float: none;
+      margin: 0;
+      clear: none;
+      white-space: nowrap; } }
 
 .dash {
   margin-left: 5.5%;
@@ -396,7 +472,8 @@ h1,
   padding: 0 1.5rem;
   height: 1.5rem;
   overflow: visible;
-  cursor: pointer; }
+  cursor: pointer;
+  border-right: 1px solid #400080; }
 
 .bell-path {
   fill: #fff;
@@ -411,8 +488,14 @@ h1,
 
 .userName {
   white-space: nowrap;
-  border-left: 1px solid #400080;
-  padding: .5rem 0 .5rem 1rem; }
+  padding: .5rem; }
+
+.userImage {
+  background: url(../images/profile-pic-carl.jpg) no-repeat center/2.5rem;
+  width: 2.5rem;
+  margin: 0 0 0 1rem;
+  height: 2.5rem;
+  border-radius: 50%; }
 
 .iconNotify {
   position: relative;
@@ -507,21 +590,31 @@ main {
   flex-direction: column; }
   @media (min-width: 768px) {
     main {
-      flex: 1;
-      flex-wrap: wrap; } }
+      display: inline-block;
+      width: calc(100% - 80px);
+      margin: 0; } }
 
 .mainTraffic {
   border-bottom: 1px solid #7733ff; }
   @media (min-width: 768px) {
     .mainTraffic {
-      flex-grow: 2;
-      flex-basis: calc(100% - 5rem); } }
+      max-height: 350px; } }
+  @media (min-width: 768px) {
+    .mainTraffic h2 {
+      position: absolute; } }
 
 .traffic {
   border-bottom: 1px solid #7733ff; }
   @media (min-width: 768px) {
     .traffic {
-      flex-basis: calc(100% - 5rem); } }
+      float: left;
+      width: calc((100% - 80px) / 2);
+      border: none; } }
+
+@media (min-width: 768px) {
+  .mobileUsers {
+    float: right;
+    width: calc((100% - 80px) / 2); } }
 
 #chart-buttons {
   clear: left;

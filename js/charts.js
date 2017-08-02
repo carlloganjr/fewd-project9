@@ -20,6 +20,7 @@ let mainTraffic = new Chart(contextMain, {
     }]
   }, // end data
     options: {
+      maintainAspectRatio: false,
       scales: {
         xAxes: [{
           gridLines: {

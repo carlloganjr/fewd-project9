@@ -6,7 +6,8 @@
   border-left: 1px solid $search-accent;
   border-bottom: 1px solid $search-accent;
   @include media('med') {
-    @include sizeBox(75%, .25rem);
+    @include sizeBox(67%, .25rem);
+    float: right;
   }
   p {
     display: none;
@@ -15,7 +16,7 @@
 
 #search {
   @include sizeBox(75%, .5rem, .25rem .5rem);
-  border: 1px solid $search-accent;
+  @include b-styles(null, 1px solid $search-accent, .3rem);
   @include media('med') {
     @include sizeBox(35%, null, .5rem 1rem);
   }

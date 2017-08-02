@@ -1,8 +1,6 @@
 %members {
   list-style: none;
   display: block;
-  // @extend %display-flex;
-  // @include flex(1, null, null, nowrap, column);
   li {
     @include sizeBox(95%, 2.5% 0, auto, 4rem);
     border-bottom: $border-solid;
@@ -19,8 +17,27 @@
   }
 }
 
+.membersFlex {
+  @include media('med') {
+    @extend %floatWidth;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+
+  }
+}
+
+#newMembers,
+#recentActive {
+  @include media('med') {
+    display: block;
+    @include flex(1, 1, $flexCalc2);
+  }
+}
+
 .new-members {
   @extend %members;
+
 }
 
 .new-activity {
@@ -63,5 +80,13 @@ time {
   &:hover {
     background: $input-focus;
     color: $input-text;
+  }
+}
+
+.sectionTitle {
+  @include media('med') {
+    float: none;
+    margin: 0;
+    clear: none;
   }
 }

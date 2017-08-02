@@ -29,6 +29,7 @@ h1,
   1.5rem);
   overflow: visible;
   cursor: pointer;
+  border-right: 1px solid $user-border;
 
 }
 
@@ -48,8 +49,13 @@ h1,
 
 .userName {
   white-space: nowrap;
-  border-left: 1px solid $user-border;
-  padding: .5rem 0 .5rem 1rem;
+  padding: .5rem;
+}
+
+.userImage {
+  background: url(../images/profile-pic-carl.jpg) no-repeat center/2.5rem;
+  @include sizeBox(2.5rem, null, 0 0 0 1rem, 2.5rem);
+  border-radius: 50%;
 }
 
 .iconNotify {
