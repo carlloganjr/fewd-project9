@@ -1,7 +1,23 @@
-form {
-  // border-top: $border-solid;
+.formFlex {
+  @include media('med') {
+    display: flex;
+    @include flex(null, null, null, nowrap, row);
+    @extend %floatWidth;
+
+  }
+}
+
+#membersForm {
   border-bottom: $border-solid;
-  // position: initial;
+}
+
+#membersForm,
+#settingsForm {
+  border-bottom: $border-solid;
+  @include media('med') {
+    @include flex(1, 1, $flexCalc2);
+    padding-top: .5rem;
+  }
 }
 
 #userSearch {

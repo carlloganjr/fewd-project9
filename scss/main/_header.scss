@@ -53,8 +53,7 @@ h1,
 }
 
 .userImage {
-  background: url(../images/profile-pic-carl.jpg) no-repeat center/2.5rem;
-  @include sizeBox(2.5rem, null, 0 0 0 1rem, 2.5rem);
+  @include sizeBox(30px, null, .25rem 0 0 1rem, 30px);
   border-radius: 50%;
 }
 
@@ -96,19 +95,19 @@ h1,
     position: absolute;
     z-index: -5;
     width: 280px;
-    top: 40px;
-    left: 0;
+    top: 5px;
+    left: 10%;
     opacity: 0;
   }
   to {
     position: absolute;
     z-index: 1000;
-    @include sizeBox(90%, .5rem);
-    @include b-styles($header-bg, null, 0 0 .5rem .5rem);
+    @include sizeBox(88%, .5rem);
+    @include b-styles($header-bg, solid 2px $user-border, .5rem);
     line-height: 2;
     font-size: .85rem;
-    top: 40px;
-    left: 2%;
+    top: 75px;
+    left: 3%;
     opacity: 1;
   }
 }
@@ -122,8 +121,7 @@ h1,
 }
 
 .notifications {
-  color: $notificationText;
-  @include b-styles($input-bg, solid 1px $alertClose, .25rem);
+  color: $input-bg;
   padding: .1rem;
   position: relative;
   &::after {
@@ -135,7 +133,7 @@ h1,
     margin-left: 5px;
     cursor: default;
     transition: all .3s ease-in-out;
-    @include b-styles($input-bg, solid 1px $alertClose, 50%);
+    @include b-styles($input-bg, null, 50%);
     position: absolute;
     bottom: 0;
   }

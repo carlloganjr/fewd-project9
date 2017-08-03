@@ -23,7 +23,6 @@
     margin: 0;
     display: flex;
     flex-direction: row;
-
   }
 }
 
@@ -32,18 +31,37 @@
   @include media('med') {
     display: block;
     @include flex(1, 1, $flexCalc2);
+    padding-top: .5rem;
+    border-bottom: $border-solid;
+  }
+}
+
+#recentActive {
+  @include media('med') {
+    border-left: $border-solid;
   }
 }
 
 .new-members {
   @extend %members;
+}
 
+.new-members li:last-child {
+  @include media('med') {
+    border-bottom: none;
+  }
 }
 
 .new-activity {
   @extend %members;
   position: initial;
   z-index: -1;
+}
+
+.new-activity li:last-child {
+  @include media('med') {
+    border-bottom: none;
+  }
 }
 
 time {
@@ -88,5 +106,6 @@ time {
     float: none;
     margin: 0;
     clear: none;
+    margin-left: .5rem;
   }
 }

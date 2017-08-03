@@ -116,7 +116,7 @@ let mobileUsers = new Chart(contextUsers, {
   },
     options: {
       legend: {
-        position: 'bottom',
+        position: 'right',
         labels: {
           boxWidth: 15
         }

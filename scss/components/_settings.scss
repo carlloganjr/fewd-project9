@@ -5,6 +5,16 @@
 
 .switch-light {
     @include sizeBox(50%, 0, 1rem 25% 2rem 25%);
+    @include media('med') {
+      @include sizeBox(25%, null, .5rem 1rem);
+      display: inline-block;
+    }
+}
+
+.switch-adjust {
+  @include media('med') {
+    margin-right: -1.3rem;
+  }
 }
 
 .switch-ios.switch-light input:checked ~ span a {
@@ -17,6 +27,30 @@
 
 .settingSpan {
   @include sizeBox(null, 0, 0 auto);
+  @include media('med') {
+    white-space: nowrap;
+    position: relative;
+    top: -.6rem;
+  }
+}
+
+.setPublic::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.settingSpan,
+.switch-light {
+  @include media('med') {
+    box-sizing: content-box;
+  }
+}
+
+
+#settingsForm {
+  @include media('med') {
+    border-left: $border-solid;
+  }
 }
 
 .sectionTitle {

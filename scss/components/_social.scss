@@ -1,10 +1,14 @@
 .social-section {
   @include media('med') {
     @extend %floatWidth;
+    border-top: $border-solid;
+    border-bottom: $border-solid;
+    padding-top: 1rem;
   }
   h2 {
     @include media('med') {
-      margin-bottom: -1.5rem;
+      margin-bottom: -2rem;
+      margin-left: 8px;
     }
   }
 }
@@ -19,8 +23,9 @@
     @include flex(1, null, null, nowrap, column);
     @include media('med') {
       @include flex(1, 1, null, nowrap, row);
-      justify-content: space-between;
-      @include sizeBox(null, 2rem 0, 0);
+      justify-content: space-around;
+      @include sizeBox(null, 2rem 0, .5rem 0);
+      border: none;
     }
   }
   &-widget {
@@ -34,6 +39,7 @@
     @include media('med') {
       @include sizeBox(30%, null, 0 1%);
       min-width: inherit;
+      max-width: 275px;
       max-height: 100px;
     }
     svg {
