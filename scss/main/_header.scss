@@ -50,6 +50,9 @@ h1,
 .userName {
   white-space: nowrap;
   padding: .5rem;
+  @include media('lg') {
+    font-size: 1.25rem;
+  }
 }
 
 .userImage {
@@ -102,7 +105,7 @@ h1,
   to {
     position: absolute;
     z-index: 1000;
-    @include sizeBox(88%, .5rem);
+    @include sizeBox(90%, .5rem);
     @include b-styles($header-bg, solid 2px $user-border, .5rem);
     line-height: 2;
     font-size: .85rem;

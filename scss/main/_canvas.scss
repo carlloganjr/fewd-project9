@@ -14,6 +14,9 @@ main {
   @include media('med') {
     padding-bottom: 2rem;
   }
+  @include media('lg') {
+    height: 42vh;
+  }
   h2 {
     @include media('med') {
     position: absolute;
@@ -46,6 +49,10 @@ main {
   list-style: none;
   @include flex(null, 1, null, nowrap, row) {
     justify-content: flex-end;
+  }
+  @include media('med') {
+    margin-right: 0;
+    width: 74%;
   }
   li {
     @include sizeBox(null, .5rem, .1rem);

@@ -15,12 +15,13 @@ $('document').ready(function() {
       let listData = "";
       let createData = [];
 
+
       for(let i = 0; i < data.results.length; i += 1) {
         let firstName = data.results[i].name.first;
         let lastName = data.results[i].name.last;
         let photo = data.results[i].picture.thumbnail;
         let email = data.results[i].email;
-
+        let x = Math.floor((Math.random() * 45) + 1);
         //create list for new members
         memberLIST += '<li class="member-list">';
         memberLIST += '<img src="' + photo + '" alt="user photo" class="userPhoto">';
@@ -36,7 +37,7 @@ $('document').ready(function() {
         activityLIST += '<img src="' + photo + '" alt="user photo" class="userPhoto">';
         activityLIST += '<p class="activity">' + firstName + ' ' + lastName +
         ' liked YourApp\'s post</p>';
-        activityLIST += '<p class="active-time">37 minutes ago</p>';
+        activityLIST += '<p class="active-time">' + x + ' minutes ago</p>';
         activityLIST += '<span class="arrow">></span>';
         activityLIST += '</li>';
 

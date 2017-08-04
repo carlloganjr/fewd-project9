@@ -42,6 +42,12 @@
       max-width: 275px;
       max-height: 100px;
     }
+    @include media('lg') {
+      @include sizeBox(35%, null, 0 1%);
+      min-width: inherit;
+      max-width: 315px;
+      max-height: 100px;
+    }
     svg {
       @include sizeBox(2rem, 1rem, 1rem 0 1rem 1rem, 2rem);
       @include b-styles($social-widget, null, 50%);
@@ -58,6 +64,10 @@
         font-size: 2rem;
         transform: translate(-1.5rem, 2.5rem);
       }
+      @include media('lg') {
+        font-size: 2.75rem;
+        transform: translate(-3rem, 2rem);
+      }
     }
   }
 }
@@ -66,17 +76,24 @@
 .twitter-heading,
 .facebook-heading {
   font-size: 1rem;
+  color: $social-widget;
   @extend %floatNposition;
   @include sizeBox(null, 0, 0);
   @include media('med') {
     font-size: 1rem;
   }
+  @include media('lg') {
+    font-size: 1.13rem;
+  }
 }
 
 .google-heading {
-  transform: translate(-6rem, 1.25rem);
+  transform: translate(-5.5rem, 1.25rem);
   @include media('med') {
-    transform: translate(-3.5rem, 1.5rem);
+    transform: translate(-2.75rem, 1.5rem);
+  }
+  @include media('lg') {
+    transform: translate(-6rem, 1.25rem);
   }
 }
 
@@ -85,11 +102,17 @@
   @include media('med') {
     transform: translate(-3.5rem, 1.5rem);
   }
+  @include media('lg') {
+    transform: translate(-7rem, 1.25rem);
+  }
 }
 
 .facebook-heading {
   transform: translate(-5rem, 1.25rem);
   @include media('med') {
     transform: translate(-2.25rem, 1.5rem);
+  }
+  @include media('lg') {
+    transform: translate(-5.5rem, 1.25rem);
   }
 }

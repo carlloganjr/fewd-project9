@@ -7,7 +7,10 @@
 
 body {
   @include media('med') {
-    height: 240vh;
+    height: 230vh;
+  }
+  @include media('med') {
+    height: 250vh;
   }
 }
 
@@ -29,6 +32,9 @@ h2 {
   color: $dash;
   @include media('med') {
     margin-top: 1.4rem;
+  }
+  @include media('lg') {
+    margin-left: 3%;
   }
 }
 

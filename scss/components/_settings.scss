@@ -9,6 +9,10 @@
       @include sizeBox(25%, null, .5rem 1rem);
       display: inline-block;
     }
+    @include media('lg') {
+      @include sizeBox(20%, null, 1.5rem 1rem);
+      display: inline-block;
+    }
 }
 
 .switch-adjust {
@@ -59,11 +63,17 @@
 
 select {
   @extend %inputs;
+  @include media('lg') {
+    @include sizeBox(85%, null, 2.5rem auto 1rem auto);
+  }
 }
 
 button[name="save"],
 button[name="cancel"] {
   @extend %button;
+  @include media('lg') {
+    @include sizeBox(40%, null, 1rem 2% 0 2%);
+  }
 }
 
 

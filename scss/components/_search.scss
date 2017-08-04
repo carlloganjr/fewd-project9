@@ -9,6 +9,9 @@
     @include sizeBox(67%, .25rem);
     float: right;
   }
+  @include media('lg') {
+    width: 80%;
+  }
   p {
     display: none;
   }

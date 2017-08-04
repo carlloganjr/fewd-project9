@@ -49,7 +49,7 @@ select, #userSearch {
   width: 250px;
   padding: 0.3rem;
   margin: auto;
-  background: rgba(119, 51, 255, 0.35);
+  background: #8080ff;
   border-radius: 0.5rem;
   content: attr(data-error);
   left: 10%; }
@@ -59,7 +59,7 @@ select, #userSearch {
   z-index: 100;
   border-style: solid;
   border-width: 0 .3rem .65rem .3rem;
-  border-color: transparent transparent rgba(119, 51, 255, 0.35) transparent;
+  border-color: transparent transparent #8080ff transparent;
   left: 25%;
   content: ""; }
 
@@ -142,6 +142,9 @@ nav {
       width: 67%;
       padding: 0.25rem;
       float: right; } }
+  @media (min-width: 1024px) {
+    .search-div {
+      width: 80%; } }
   .search-div p {
     display: none; }
 
@@ -187,6 +190,9 @@ nav {
       margin: 0 4% 1rem 0;
       height: 1.3rem;
       clear: none; } }
+  @media (min-width: 1024px) {
+    .mainAlert {
+      margin-right: 7%; } }
   .mainAlert p {
     font-size: .88rem;
     width: 95%;
@@ -202,12 +208,16 @@ nav {
   padding: 0.5rem;
   margin: auto;
   height: 3.5rem;
-  background: rgba(119, 51, 255, 0.35);
+  background: rgba(119, 51, 255, 0.4);
   border-radius: 0.5rem;
   position: absolute;
   left: 2.5%;
   z-index: -1;
   opacity: 0; }
+  @media (min-width: 768px) {
+    #sent {
+      width: 38%;
+      margin: 0 0 0 85px; } }
 
 .show {
   animation: .5s ease-in .1s forwards popup; }
@@ -236,7 +246,7 @@ nav {
   top: 44px; }
 
 #messageError::after {
-  top: 148px; }
+  top: 147px; }
 
 #messageError::before {
   top: 137px; }
@@ -285,6 +295,13 @@ nav {
       min-width: inherit;
       max-width: 275px;
       max-height: 100px; } }
+  @media (min-width: 1024px) {
+    .social-widget {
+      width: 35%;
+      margin: 0 1%;
+      min-width: inherit;
+      max-width: 315px;
+      max-height: 100px; } }
   .social-widget svg {
     width: 2rem;
     padding: 1rem;
@@ -304,11 +321,16 @@ nav {
       .social-widget p {
         font-size: 2rem;
         transform: translate(-1.5rem, 2.5rem); } }
+    @media (min-width: 1024px) {
+      .social-widget p {
+        font-size: 2.75rem;
+        transform: translate(-3rem, 2rem); } }
 
 .google-heading,
 .twitter-heading,
 .facebook-heading {
   font-size: 1rem;
+  color: #400080;
   padding: 0;
   margin: 0; }
   @media (min-width: 768px) {
@@ -316,24 +338,38 @@ nav {
     .twitter-heading,
     .facebook-heading {
       font-size: 1rem; } }
+  @media (min-width: 1024px) {
+    .google-heading,
+    .twitter-heading,
+    .facebook-heading {
+      font-size: 1.13rem; } }
 
 .google-heading {
-  transform: translate(-6rem, 1.25rem); }
+  transform: translate(-5.5rem, 1.25rem); }
   @media (min-width: 768px) {
     .google-heading {
-      transform: translate(-3.5rem, 1.5rem); } }
+      transform: translate(-2.75rem, 1.5rem); } }
+  @media (min-width: 1024px) {
+    .google-heading {
+      transform: translate(-6rem, 1.25rem); } }
 
 .twitter-heading {
   transform: translate(-6.1rem, 1.25rem); }
   @media (min-width: 768px) {
     .twitter-heading {
       transform: translate(-3.5rem, 1.5rem); } }
+  @media (min-width: 1024px) {
+    .twitter-heading {
+      transform: translate(-7rem, 1.25rem); } }
 
 .facebook-heading {
   transform: translate(-5rem, 1.25rem); }
   @media (min-width: 768px) {
     .facebook-heading {
       transform: translate(-2.25rem, 1.5rem); } }
+  @media (min-width: 1024px) {
+    .facebook-heading {
+      transform: translate(-5.5rem, 1.25rem); } }
 
 .new-members, .new-activity {
   list-style: none;
@@ -344,11 +380,20 @@ nav {
     margin: auto;
     height: 4rem;
     border-bottom: 1px solid #7733ff; }
+    @media (min-width: 1024px) {
+      .new-members li, .new-activity li {
+        height: 3.75rem; } }
   .new-members a, .new-activity a {
     text-decoration: none;
     font-size: .7rem;
     padding: 0;
     margin: 0; }
+    @media (min-width: 768px) {
+      .new-members a, .new-activity a {
+        font-size: .9rem; } }
+    @media (min-width: 1024px) {
+      .new-members a, .new-activity a {
+        font-size: 1.05rem; } }
   .new-members img, .new-activity img {
     border-radius: 50%;
     width: 4rem;
@@ -390,33 +435,55 @@ nav {
 
 time {
   font-size: .75rem; }
+  @media (min-width: 768px) {
+    time {
+      font-size: 1rem;
+      position: relative;
+      right: -60%;
+      top: -35px; } }
+  @media (min-width: 1024px) {
+    time {
+      font-size: 1rem;
+      position: relative;
+      right: -70%;
+      top: -35px; } }
 
 .user-name {
   white-space: nowrap;
   font-size: 1rem;
   padding: 0;
   margin: 0.25rem 0 0 0; }
+  @media (min-width: 1024px) {
+    .user-name {
+      font-size: 1.25rem; } }
 
 .activity {
   margin-top: .5rem;
   margin-bottom: 0;
   white-space: pre-wrap; }
+  @media (min-width: 1024px) {
+    .activity {
+      font-size: 1.25rem; } }
 
 .active-time {
   font-size: .75rem;
   margin-top: .25rem; }
+  @media (min-width: 768px) {
+    .active-time {
+      font-size: .9rem; } }
+  @media (min-width: 1024px) {
+    .active-time {
+      font-size: 1rem; } }
 
 .arrow {
   padding: 0 .25rem;
   position: relative;
   top: -2.75rem;
-  background: #7733ff;
-  color: #fff;
+  color: #d9d9d9;
   cursor: pointer;
   transition: all .5s ease-in-out; }
   .arrow:hover {
-    background: lavender;
-    color: #fff; }
+    color: #7733ff; }
 
 @media (min-width: 768px) {
   .sectionTitle {
@@ -437,6 +504,11 @@ time {
     .switch-light {
       width: 25%;
       margin: 0.5rem 1rem;
+      display: inline-block; } }
+  @media (min-width: 1024px) {
+    .switch-light {
+      width: 20%;
+      margin: 1.5rem 1rem;
       display: inline-block; } }
 
 @media (min-width: 768px) {
@@ -474,6 +546,17 @@ time {
 .sectionTitle {
   text-align: left; }
 
+@media (min-width: 1024px) {
+  select {
+    width: 85%;
+    margin: 2.5rem auto 1rem auto; } }
+
+@media (min-width: 1024px) {
+  button[name="save"],
+  button[name="cancel"] {
+    width: 40%;
+    margin: 1rem 2% 0 2%; } }
+
 button[name="cancel"] {
   background: grey; }
 
@@ -488,7 +571,10 @@ button[name="cancel"]:hover {
 
 @media (min-width: 768px) {
   body {
-    height: 240vh; } }
+    height: 230vh; } }
+@media (min-width: 768px) {
+  body {
+    height: 250vh; } }
 
 h2 {
   font-size: 1rem;
@@ -507,6 +593,9 @@ h2 {
   @media (min-width: 768px) {
     .dash {
       margin-top: 1.4rem; } }
+  @media (min-width: 1024px) {
+    .dash {
+      margin-left: 3%; } }
 
 main h2 {
   clear: both;
@@ -554,6 +643,9 @@ h1,
 .userName {
   white-space: nowrap;
   padding: .5rem; }
+  @media (min-width: 1024px) {
+    .userName {
+      font-size: 1.25rem; } }
 
 .userImage {
   width: 30px;
@@ -603,7 +695,7 @@ h1,
   to {
     position: absolute;
     z-index: 1000;
-    width: 88%;
+    width: 90%;
     padding: 0.5rem;
     background: #8080ff;
     border: solid 2px #400080;
@@ -662,6 +754,9 @@ main {
   @media (min-width: 768px) {
     .mainTraffic {
       padding-bottom: 2rem; } }
+  @media (min-width: 1024px) {
+    .mainTraffic {
+      height: 42vh; } }
   @media (min-width: 768px) {
     .mainTraffic h2 {
       position: absolute; } }
@@ -691,6 +786,10 @@ main {
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: flex-end; }
+  @media (min-width: 768px) {
+    #chart-buttons {
+      margin-right: 0;
+      width: 74%; } }
   #chart-buttons li {
     padding: 0.5rem;
     margin: 0.1rem;
@@ -718,7 +817,8 @@ main {
       flex: 1;
       flex-grow: 1;
       flex-basis: calc((100% - 80px) / 2);
-      padding-top: .5rem; } }
+      padding-top: .5rem;
+      border-bottom: none; } }
 
 #userSearch::-webkit-calendar-picker-indicator {
   display: none; }
