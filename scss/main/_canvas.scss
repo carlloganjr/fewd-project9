@@ -8,8 +8,8 @@ main {
 }
 
 .mainTraffic {
-  height: 35vh;
-  padding-bottom: 4rem;
+  height: 220px;
+  padding-bottom: 6.25rem;
   border-bottom: 1px solid $canvas-border;
   @include media('med') {
     padding-bottom: 2rem;
@@ -34,6 +34,7 @@ main {
 }
 
 .mobileUsers {
+  border-bottom: 1px solid $canvas-border;
   @include media('med') {
     float: right;
     width: $canvasCalc1;
